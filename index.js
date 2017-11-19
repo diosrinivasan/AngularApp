@@ -6,4 +6,4 @@ app.use(bodyParser.json());
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
-app.listen(7000);
+app.listen(process.env.PORT||7000);

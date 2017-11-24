@@ -7,12 +7,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Poiret One' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-    <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="js/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="js/assets/owl.theme.default.min.css" />
+
 </head>
 
 <body class="login-background">
+    <div class="modal fade" id="registerModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 style="color:#022535;text-align:center;">
+                        Welcome to Dpostino</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="lastname" placeholder="Last Name" name="lastname">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Email id" name="email" id="emailid">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Mobile" name="mobileno" id="mobileno">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Country" name="country" id="country">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" placeholder="Password" class="form-control" id="psw">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="" checked>Stay Signed in</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 login-facebook">
+                            <button class="loginBtn loginBtn--facebook btn-block">
+                                Login with Facebook
+                            </button>
+
+                            <button class="loginBtn loginBtn--google  btn-block">
+                                Login with Google
+                            </button>
+                        </div>
+                        <button type="submit" style="border-radius:0px;" class="btn btn-default btn-warning btn-block">
+                            SIGNUP</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                    <p>Forgot
+                        <a href="#">Password?</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="loginModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 style="color:#022535;">
+                        <span class="glyphicon glyphicon-lock"></span> Login with Dpostion</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="usrname">
+                                <span class="glyphicon glyphicon-user"></span> Username</label>
+                            <input type="text" class="form-control" id="usrname" placeholder="Email Id/Mobile Number">
+                        </div>
+                        <div class="form-group">
+                            <label for="psw">
+                                <span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                            <input type="password" class="form-control" id="psw" placeholder="Enter password">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="" checked>Stay Signed in</label>
+                        </div>
+                        <button type="submit" style="border-radius:0px;" class="btn btn-default btn-warning btn-block">
+                            <span class="glyphicon glyphicon-off"></span> Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                    <p>Forgot
+                        <a href="#">Password?</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -20,10 +121,10 @@
             </div>
             <ul class="nav navbar-nav navbar-right col-md-3 navbar-login">
                 <li>
-                    <a class="btn btn-primary btn-outline">Join</a>
+                    <a class="btn btn-primary btn-outline  join-button">Join</a>
                 </li>
                 <li>
-                    <a class="btn btn-primary btn-outline">Login</a>
+                    <a class="btn btn-primary btn-outline login-button">Login</a>
                 </li>
             </ul>
         </div>
@@ -49,63 +150,25 @@
             <br>
         </div>
         <div class="col-md-offset-1 col-md-10 ">
-                <div class="col-md-4">
-                        <div class="card">
-                            <a class="img-card-1">
-                                <div class="col-md-5">
-                                    <img class="circular--square" src="img/mens.jpg" />
-                                    <br/>
-                                    <span class="person-name">John doe</span>
-                                    <span class="person-name-small">Demo Text</span>
-                                </div>
-                                <div class="col-md-2" style="text-align:center;">
-                                    <i class="glyphicon icon-x glyphicon-arrow-right"></i>
-                                </div>
-                                <div class="col-md-5" style="text-align:center;">
-                                    <img class="circular--square" src="img/womens.jpg" />
-                                    <br/>
-                                    <span class="person-name">Melinda</span>
-                                    <span class="person-name-small">Demo Text</span>
-                                </div>
-                            </a>
-                            <hr style="margin:15px 10px;">
-                            <div class="card-content" style="padding: 0px 15px;">
-                                <div class="row">
-                                    <div class="col-md-8 description-box">Half-lion, half-fish statue & fountain</div>
-                                    <div class="col-md-4 description-photo"><img src="img/download.jpg" style="width:100%;" width="100" height="100"/></div>
-                                </div>
-                            </div>
-                            <hr style="margin:10px 10px;">
-                            <div class="card-content" style="padding: 0px 15px;">
-                                <div class="row">
-                                    <div class="col-md-12" style="text-align:center;font-size:16px;margin-bottom:5px;color:#ff9a5f;"><i class="glyphicon glyphicon-star"></i> <i class=" glyphicon glyphicon-star"></i> <i class=" glyphicon glyphicon-star"></i> <i class=" glyphicon glyphicon-star"></i></div>
-                                    </div>
-                                </div>
-                           
-                                <hr style="margin:10px 10px;">
-                                <div class="card-content" style="padding: 0px 15px;">
-                                    <div class="row">
-                                        <div class="col-md-12" style="text-align:center;font-size:16px;margin-bottom:5px;color:#ff9a5f;"><span class="person-name-small">Demo TextDemo TextDemo Text</span></div>
-                                        </div>
-                                    </div>
-                        </div>
-                    </div>
-            <div class="col-md-4">
+            <div class="owl-carousel owl-theme">
+                <div class=" item">
                     <div class="card">
                         <a class="img-card-1">
-                            <div class="col-md-5">
+                            <div class="col-md-5 col-sm-5 col-xs-5">
                                 <img class="circular--square" src="img/mens.jpg" />
                                 <br/>
                                 <span class="person-name">John doe</span>
+                                <br/>
                                 <span class="person-name-small">Demo Text</span>
                             </div>
-                            <div class="col-md-2" style="text-align:center;">
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="text-align:center;">
                                 <i class="glyphicon icon-x glyphicon-arrow-right"></i>
                             </div>
-                            <div class="col-md-5" style="text-align:center;">
+                            <div class="col-md-5 col-sm-5 col-xs-5" style="text-align:center;">
                                 <img class="circular--square" src="img/womens.jpg" />
                                 <br/>
                                 <span class="person-name">Melinda</span>
+                                <br/>
                                 <span class="person-name-small">Demo Text</span>
                             </div>
                         </a>
@@ -113,81 +176,254 @@
                         <div class="card-content" style="padding: 0px 15px;">
                             <div class="row">
                                 <div class="col-md-8 description-box">Half-lion, half-fish statue & fountain</div>
-                                <div class="col-md-4 description-photo"><img src="img/download.jpg" style="width:100%;" width="100" height="100"/></div>
+                                <div class="col-md-4 description-photo">
+                                    <img src="img/download.jpg" style="width:100%;" width="100" height="100" />
+                                </div>
                             </div>
                         </div>
                         <hr style="margin:10px 10px;">
                         <div class="card-content" style="padding: 0px 15px;">
                             <div class="row">
-                                <div class="col-md-12" style="text-align:center;font-size:16px;margin-bottom:5px;color:#ff9a5f;"><i class="glyphicon glyphicon-star"></i> <i class=" glyphicon glyphicon-star"></i> <i class=" glyphicon glyphicon-star"></i> <i class=" glyphicon glyphicon-star"></i></div>
+                                <div class="col-md-12" style="text-align:center;font-size:16px;margin-bottom:5px;color:#ff9a5f;">
+                                    <i class="glyphicon glyphicon-star"></i>
+                                    <i class=" glyphicon glyphicon-star"></i>
+                                    <i class=" glyphicon glyphicon-star"></i>
+                                    <i class=" glyphicon glyphicon-star"></i>
                                 </div>
                             </div>
-                       
-                            <hr style="margin:10px 10px;">
-                            <div class="card-content" style="padding: 0px 15px;">
-                                <div class="row">
-                                    <div class="col-md-12" style="text-align:center;font-size:16px;margin-bottom:5px;color:#ff9a5f;"><span class="person-name-small">Demo TextDemo TextDemo Text</span></div>
-                                    </div>
+                        </div>
+
+                        <hr style="margin:10px 10px;">
+                        <div class="card-content" style="padding: 0px 15px;">
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:center;font-size:16px;margin-bottom:5px;color:#ff9a5f;">
+                                    <span class="person-name-small">Demo TextDemo TextDemo Text</span>
                                 </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <a class="img-card-1">
-                        <div class="col-md-5">
-                            <img class="circular--square" src="img/mens.jpg" />
-                            <br/>
-                            <span class="person-name">John doe</span>
-                            <span class="person-name-small">Demo Text</span>
-                        </div>
-                        <div class="col-md-2" style="text-align:center;">
-                            <i class="glyphicon icon-x glyphicon-arrow-right"></i>
-                        </div>
-                        <div class="col-md-5" style="text-align:center;">
-                            <img class="circular--square" src="img/womens.jpg" />
-                            <br/>
-                            <span class="person-name">Melinda</span>
-                            <span class="person-name-small">Demo Text</span>
-                        </div>
-                    </a>
-                    <hr style="margin:15px 10px;">
-                    <div class="card-content" style="padding: 0px 15px;">
-                        <div class="row">
-                            <div class="col-md-8 description-box">Half-lion, half-fish statue & fountain</div>
-                            <div class="col-md-4 description-photo"><img src="img/download.jpg" style="width:100%;" width="100" height="100"/></div>
-                        </div>
-                    </div>
-                    <hr style="margin:10px 10px;">
-                    <div class="card-content" style="padding: 0px 15px;">
-                        <div class="row">
-                            <div class="col-md-12" style="text-align:center;font-size:16px;margin-bottom:5px;color:#ff9a5f;"><i class="glyphicon glyphicon-star"></i> <i class=" glyphicon glyphicon-star"></i> <i class=" glyphicon glyphicon-star"></i> <i class=" glyphicon glyphicon-star"></i></div>
+                <div class=" item">
+                    <div class="card">
+                        <a class="img-card-1">
+                            <div class="col-md-5 col-sm-5 col-xs-5">
+                                <img class="circular--square" src="img/mens.jpg" />
+                                <br/>
+                                <span class="person-name">John doe</span>
+                                <br/>
+                                <span class="person-name-small">Demo Text</span>
+                            </div>
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="text-align:center;">
+                                <i class="glyphicon icon-x glyphicon-arrow-right"></i>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-5" style="text-align:center;">
+                                <img class="circular--square" src="img/womens.jpg" />
+                                <br/>
+                                <span class="person-name">Melinda</span>
+                                <br/>
+                                <span class="person-name-small">Demo Text</span>
+                            </div>
+                        </a>
+                        <hr style="margin:15px 10px;">
+                        <div class="card-content" style="padding: 0px 15px;">
+                            <div class="row">
+                                <div class="col-md-8 description-box">Half-lion, half-fish statue & fountain</div>
+                                <div class="col-md-4 description-photo">
+                                    <img src="img/download.jpg" style="width:100%;" width="100" height="100" />
+                                </div>
                             </div>
                         </div>
-                   
                         <hr style="margin:10px 10px;">
                         <div class="card-content" style="padding: 0px 15px;">
                             <div class="row">
-                                <div class="col-md-12" style="text-align:center;font-size:16px;margin-bottom:5px;color:#ff9a5f;"><span class="person-name-small">Demo TextDemo TextDemo Text</span></div>
+                                <div class="col-md-12" style="text-align:center;font-size:16px;margin-bottom:5px;color:#ff9a5f;">
+                                    <i class="glyphicon glyphicon-star"></i>
+                                    <i class=" glyphicon glyphicon-star"></i>
+                                    <i class=" glyphicon glyphicon-star"></i>
+                                    <i class=" glyphicon glyphicon-star"></i>
                                 </div>
                             </div>
+                        </div>
+
+                        <hr style="margin:10px 10px;">
+                        <div class="card-content" style="padding: 0px 15px;">
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:center;font-size:16px;margin-bottom:5px;color:#ff9a5f;">
+                                    <span class="person-name-small">Demo TextDemo TextDemo Text</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" item">
+                    <div class="card">
+                        <a class="img-card-1">
+                            <div class="col-md-5 col-sm-5 col-xs-5">
+                                <img class="circular--square" src="img/mens.jpg" />
+                                <br/>
+                                <span class="person-name">John doe</span>
+                                <br/>
+                                <span class="person-name-small">Demo Text</span>
+                            </div>
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="text-align:center;">
+                                <i class="glyphicon icon-x glyphicon-arrow-right"></i>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-5" style="text-align:center;">
+                                <img class="circular--square" src="img/womens.jpg" />
+                                <br/>
+                                <span class="person-name">Melinda</span>
+                                <br/>
+                                <span class="person-name-small">Demo Text</span>
+                            </div>
+                        </a>
+                        <hr style="margin:15px 10px;">
+                        <div class="card-content" style="padding: 0px 15px;">
+                            <div class="row">
+                                <div class="col-md-8 description-box">Half-lion, half-fish statue & fountain</div>
+                                <div class="col-md-4 description-photo">
+                                    <img src="img/download.jpg" style="width:100%;" width="100" height="100" />
+                                </div>
+                            </div>
+                        </div>
+                        <hr style="margin:10px 10px;">
+                        <div class="card-content" style="padding: 0px 15px;">
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:center;font-size:16px;margin-bottom:5px;color:#ff9a5f;">
+                                    <i class="glyphicon glyphicon-star"></i>
+                                    <i class=" glyphicon glyphicon-star"></i>
+                                    <i class=" glyphicon glyphicon-star"></i>
+                                    <i class=" glyphicon glyphicon-star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr style="margin:10px 10px;">
+                        <div class="card-content" style="padding: 0px 15px;">
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:center;font-size:16px;margin-bottom:5px;color:#ff9a5f;">
+                                    <span class="person-name-small">Demo TextDemo TextDemo Text</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" item">
+                    <div class="card">
+                        <a class="img-card-1">
+                            <div class="col-md-5 col-sm-5 col-xs-5">
+                                <img class="circular--square" src="img/mens.jpg" />
+                                <br/>
+                                <span class="person-name">John doe</span>
+                                <br/>
+                                <span class="person-name-small">Demo Text</span>
+                            </div>
+                            <div class="col-md-2 col-xs-2 col-sm-2" style="text-align:center;">
+                                <i class="glyphicon icon-x glyphicon-arrow-right"></i>
+                            </div>
+                            <div class="col-md-5 col-sm-5 col-xs-5" style="text-align:center;">
+                                <img class="circular--square" src="img/womens.jpg" />
+                                <br/>
+                                <span class="person-name">Melinda</span>
+                                <br/>
+                                <span class="person-name-small">Demo Text</span>
+                            </div>
+                        </a>
+                        <hr style="margin:15px 10px;">
+                        <div class="card-content" style="padding: 0px 15px;">
+                            <div class="row">
+                                <div class="col-md-8 description-box">Half-lion, half-fish statue & fountain</div>
+                                <div class="col-md-4 description-photo">
+                                    <img src="img/download.jpg" style="width:100%;" width="100" height="100" />
+                                </div>
+                            </div>
+                        </div>
+                        <hr style="margin:10px 10px;">
+                        <div class="card-content" style="padding: 0px 15px;">
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:center;font-size:16px;margin-bottom:5px;color:#ff9a5f;">
+                                    <i class="glyphicon glyphicon-star"></i>
+                                    <i class=" glyphicon glyphicon-star"></i>
+                                    <i class=" glyphicon glyphicon-star"></i>
+                                    <i class=" glyphicon glyphicon-star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr style="margin:10px 10px;">
+                        <div class="card-content" style="padding: 0px 15px;">
+                            <div class="row">
+                                <div class="col-md-12" style="text-align:center;font-size:16px;margin-bottom:5px;color:#ff9a5f;">
+                                    <span class="person-name-small">Demo TextDemo TextDemo Text</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-                    
-<!--Footer-->
-<footer class="page-footer navbar navbar-default">
- 
-            <!--Copyright-->
-            <div class="footer-copyright">
-                <div class="container-fluid" style="font-size:14px;padding:10px 0px;text-align:center;color:#8c8c8c">
-                    © 2015 Copyright: <a href="#" style="color:#8c8c8c!important"> Dpostion </a>
-        
-                </div>
+
+    <!--Footer-->
+    <footer class="page-footer navbar navbar-default">
+
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="container-fluid" style="font-size:14px;padding:10px 0px;text-align:center;color:#8c8c8c">
+                © 2015 Copyright:
+                <a href="#" style="color:#8c8c8c!important"> Dpostion </a>
+
             </div>
-            <!--/.Copyright-->
-        
-        </footer>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script>
+        $(function () {
+            $("a.login-button").click(function () {
+                $("#loginModal").modal();
+            });
+            $("a.join-button").click(function () {
+                $("#registerModal").modal();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                items: 3,
+                dots:false,
+                navText:['<','>'],
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    600: {
+                        items: 2,
+                        nav: false
+                    },
+                    1000: {
+                        items: 3,
+                        nav: true,
+
+                    }
+                }
+            });
+            $('.play').on('click', function () {
+                owl.trigger('play.owl.autoplay', [1000])
+            })
+            $('.stop').on('click', function () {
+                owl.trigger('stop.owl.autoplay')
+            })
+        })
+    </script>
 </body>
 
 </html>

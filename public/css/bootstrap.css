@@ -3286,19 +3286,19 @@ fieldset[disabled] .btn-info.focus {
 }
 .btn-warning {
   color: #fff;
-  background-color: #f0ad4e;
-  border-color: #eea236;
+  background-color: #ff9a5f;
+  border-color: #ff660c;
 }
 .btn-warning:focus,
 .btn-warning.focus {
   color: #fff;
-  background-color: #ec971f;
-  border-color: #985f0d;
+  background-color: #ec6b1f;
+  border-color: #d55112;
 }
 .btn-warning:hover {
   color: #fff;
-  background-color: #ec971f;
-  border-color: #d58512;
+  background-color: #ec6b1f;
+  border-color: #d55112;
 }
 .btn-warning:active,
 .btn-warning.active,
@@ -6568,6 +6568,7 @@ button.close {
   display: none !important;
 }
 @media (max-width: 767px) {
+
   .visible-xs {
     display: block !important;
   }
@@ -6598,6 +6599,9 @@ button.close {
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
+  .login-facebook{
+    padding-top:100px;
+  }
   .visible-sm {
     display: block !important;
   }
@@ -6613,11 +6617,17 @@ button.close {
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
+  .login-facebook{
+    padding-top:100px;
+  }
   .visible-sm-block {
     display: block !important;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
+  .login-facebook{
+    padding-top:100px;
+  }
   .visible-sm-inline {
     display: inline !important;
   }
@@ -6653,11 +6663,17 @@ button.close {
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
+  .login-facebook{
+    padding-top:100px;
+  }
   .visible-md-inline-block {
     display: inline-block !important;
   }
 }
 @media (min-width: 1200px) {
+  .login-facebook{
+    padding-top:100px;
+  }
   .visible-lg {
     display: block !important;
   }

@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="js/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="js/assets/owl.theme.default.min.css" />
-
+    <style>
+        .card {
+            padding-right: 13px;
+        }
+    </style>
 </head>
 
 <body class="login-background">
@@ -119,12 +123,12 @@
             <div class="col-md-4">
                 <a class="navbar-brand" href="#">Logo</a>
             </div>
-           <div class="col-md-3 navbar-right" style="padding-top:10px;">
-                    <a class="btn btn-primary btn-outline  join-button">Join</a>
-              
-                    <a class="btn btn-primary btn-outline login-button">Login</a>
-                </div>
-       
+            <div class="col-md-3 navbar-right" style="padding-top:10px;">
+                <a class="btn btn-primary btn-outline  join-button">Join</a>
+
+                <a class="btn btn-primary btn-outline login-button">Login</a>
+            </div>
+
         </div>
     </nav>
 
@@ -393,8 +397,8 @@
             var owl = $('.owl-carousel');
             owl.owlCarousel({
                 items: 3,
-                dots:false,
-                navText:['<','>'],
+                dots: false,
+                navText: ['<', '>'],
                 loop: true,
                 margin: 10,
                 autoplay: true,

@@ -6,15 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dpostino.com</title>
-    <script src='js/angular.min.js'></script>
+    <!-- <script src='js/angular.min.js'></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
-    <script src='js/ui-bootstrap-tpls-0.12.0.js'></script>
+    <script src='js/ui-bootstrap-tpls-0.12.0.js'></script> -->
     <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/datepicker.css" />
+    <link rel="stylesheet" href="css/datepicker.css" />
     <link rel="stylesheet" href="css/styles.css" />
+
 </head>
 
-<body ng-app="myapp">
-    <nav class="navbar navbar-inverse" role="navigation">
+<body>
+    <nav class="navbar navbar-inverse" style="z-index:10000;" style="border-radius:0px;" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -24,7 +27,7 @@
                 </button>
                 <a class="navbar-brand" href="#">
                     <span class="glyphicon glyphicon-equalizer large-icon" aria-hidden="true">
-                        <p class="navbar-text">Dpostino.com</p>
+                        <span>Dpostino.com</span>
                     </span>
                 </a>
 
@@ -144,16 +147,18 @@ Licensed under MIT
                     </div>
                 </div>
                 <div class="panel panel-default" style="margin-top:10px;border-radius:0px">
-                    <div class="panel-heading"><h4 style="margin:5px 0;">Upcoming Events</h4></div>
+                    <div class="panel-heading">
+                        <h4 style="margin:5px 0;">Upcoming Events</h4>
+                    </div>
                     <div class="panel-body">List</div>
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <div class="profile-content">
                     <div class="form-group">
 
-                        <textarea placeholder="Share your trip or create a request" style="border-top:none;border-left:none;border-right:none;box-shadow:none;border-bottom-color:#ccc; "
-                            class="form-control" rows="3" id="comment"></textarea>
+                        <!-- <textarea placeholder="Share your trip or create a request" style="border-top:none;border-left:none;border-right:none;box-shadow:none;border-bottom-color:#ccc; " -->
+                        <!-- class="form-control" rows="3" id="comment"></textarea> -->
                         <div class="form-group" style="padding:10px 0px;">
                             <label class="radio-inline">
                                 <input type="radio" name="optradio">Compose Trip
@@ -174,74 +179,90 @@ Licensed under MIT
                         <input type="radio" name="optradio1">Search for Request
                     </label>
                     <div class="row" style="padding-top:10px;">
-                        <div class="col-md-6" ng-controller="TypeaheadCtrlS">
-                            <input type="text" class="form-control" typeahead="state for state in source | filter:$viewValue | limitTo:8" placeholder="source"
-                                id="sourceS" name="sourceS" ng-model="sourceS" />
+                        <div class="col-md-3" ng-controller="TypeaheadCtrlS">
+                            <input type="text" class="form-control" placeholder="source" id="sourceS" name="sourceS" />
                         </div>
-                        <div class="col-md-6" ng-controller="TypeaheadCtrlD">
-                            <input type="text" class="form-control" typeahead="state for state in destination | filter:$viewValue | limitTo:8" placeholder="destination"
-                                name="destinationD" id="destinationD" ng-model="destinationD" />
+                        <div class="col-md-3" ng-controller="TypeaheadCtrlD">
+                            <input type="text" class="form-control" placeholder="destination" name="destinationD" id="destinationD" />
                         </div>
-                    </div>
-                    <div class="row" style="padding-top:10px;">
-                        <div class="col-md-6" ng-controller="DateController">
-                            <input type="text" ng-focus="open1()" is-open="popup1.opened" datepicker-options="dateOptions" class="form-control" placeholder="date"
-                                ng-model="date" ng-required="true" close-text="Close" datepicker-popup="{{format}}" />
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" placeholder="date" id="datepickerSource" />
                         </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="weight (optional)" ng-model="weight" />
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" placeholder="weight (optional)" />
                         </div>
                     </div>
-                    <div class="row" style="padding-top:10px;">
+
+                    <div class="row" style="padding:9px 18px 10px 0px;">
                         <div class="col-md-12">
                             <button class="btn btn-block btn-primary" style="border-radius:0px">Search</button>
                         </div>
                     </div>
                 </div>
                 <hr style="border-bottom:1px solid rgb(212, 212, 212);margin:7px 0;" />
-             
-                        <div class=" panel panel-default  panel-google-plus">
-                                <div class="dropdown">
-                                    <span class="dropdown-toggle" type="button" data-toggle="dropdown">
-                                        <span class=" glyphicon glyphicon-chevron-down "></span>
-                                    </span>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                                        <li role="presentation" class="divider"></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-                                    </ul>
-                                </div>
-                             
-                                <div class="panel-heading">
-                                    <img class=" img-circle pull-left " src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg" alt="Mouse0270" />
-                                    <h3>Robert McIntosh</h3>
-                                    <h5><span>Shared publicly</span> - <span>Jun 27, 2014</span> </h5>
-                                </div>
-                                <div class="panel-body">
-                                    <p>Do people born in 2000 get to choose if they are Generation Y or Generation Z? How do you decide what generation you want to belong to?</p>
-                                </div>
-                                <div class="panel-footer">
-                                    <div class=" col-xs-2"><button type="button" class=" btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button></div>
-                                    <div class=" col-xs-2"><button type="button" class=" btn btn-default ">
-                                        <span class=" glyphicon glyphicon-share-alt "></span>
-                                    </button></div>
-                                    <div class=" col-xs-8"><input type="text" placeholder="Add a comment..." class="form-control"></div>
-                                </div>
-                                <div class="panel-google-plus-comment">
-                                    <img class="img-circle" src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s46" alt="User Image" />
-                                    <div class="panel-google-plus-textarea">
-                                        <textarea rows="4"></textarea>
-                                        <button type="submit" class=" btn btn-success disabled ">Post comment</button>
-                                        <button type="reset" class=" btn btn-default ">Cancel</button>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-              
+
+                <div class=" panel panel-default  panel-google-plus">
+                    <div class="dropdown">
+                        <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+                            <span class=" glyphicon glyphicon-chevron-down "></span>
+                        </span>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="#">Action</a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="#">Another action</a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="#">Something else here</a>
+                            </li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="#">Separated link</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="panel-heading">
+                        <img class=" img-circle pull-left " src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg"
+                            alt="Mouse0270" />
+                        <h3>Robert McIntosh</h3>
+                        <h5>
+                            <span>Shared publicly</span> -
+                            <span>Jun 27, 2014</span>
+                        </h5>
+                    </div>
+                    <div class="panel-body">
+                        <p>Do people born in 2000 get to choose if they are Generation Y or Generation Z? How do you decide
+                            what generation you want to belong to?</p>
+                    </div>
+                    <div class="panel-footer">
+                        <div class=" col-xs-3">
+                            <button type="button" class=" btn btn-default">
+                                <span class="glyphicon glyphicon-thumbs-up"></span>
+                            </button>&nbsp;
+                            <button type="button" class=" btn btn-default ">
+                                <span class=" glyphicon glyphicon-share-alt "></span>
+                        </div>
+                        </button>&nbsp;
+                        <div class=" col-xs-8">
+                            <input type="text" placeholder="Add a comment..." class="form-control">
+                        </div>
+
+                    </div>
+                    <div class="panel-google-plus-comment">
+                        <img class="img-circle" src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s46" alt="User Image" />
+                        <div class="panel-google-plus-textarea">
+                            <textarea rows="4"></textarea>
+                            <button type="submit" class=" btn btn-success disabled ">Post comment</button>
+                            <button type="reset" class=" btn btn-default ">Cancel</button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
 
                 <div class="panel panel-default" style="border-radius:0px;border-color:transparent;background:transparent;margin-bottom:0px;">
                     <div class="panel-heading">
@@ -272,7 +293,8 @@ Licensed under MIT
                     </div>
                 </div>
                 <div class="panel panel-default" style="border-radius:0px;border-color:transparent;background:transparent;margin-bottom:0px;">
-                    <div class="panel-heading"><h4 style="margin:5px 0;">Ongoing Events </div>
+                    <div class="panel-heading">
+                        <h4 style="margin:5px 0;">Ongoing Events </div>
                     <div class="panel-body">
                         <div class="row">
                             <div class="card">
@@ -304,11 +326,58 @@ Licensed under MIT
         <strong>Powered by </a>
         </strong>
     </center>
-
-    
     <script src="js/jquery-3.2.1.js"></script>
-    <script src="js/script.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/bootstrap3-typeahead.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#datepickerSource').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            }).datepicker('update', new Date()); //Initialise any date pickers
+            //Initialise any date pickers
+            var jsonData = [
+                {
+                    "id": 1,
+                    "name": "Andrew Pougher"
+                },
+                {
+                    "id": 2,
+                    "name": "Michele Moore"
+                },
+                {
+                    "id": 3,
+                    "name": "Michele Boob"
+                },
+                {
+                    "id": 4,
+                    "name": "Michael Moore"
+                },
+                {
+                    "id": 5,
+                    "name": "George Michael"
+                }
+            ]
+
+            var productNames = new Array();
+            var productIds = new Object();
+            $.each(jsonData, function (index, product) {
+                productNames.push(product.name);
+                productIds[product.name] = product.id;
+            });
+            $('#sourceS').typeahead({
+                source: productNames
+            });
+            $('#destinationD').typeahead({
+                source: productNames
+            });
+        });
+
+
+
+    </script>
 
 </body>
 

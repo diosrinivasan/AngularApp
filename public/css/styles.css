@@ -151,9 +151,7 @@ hr.style14 {
   {
     margin-top:7px;
   }
-  .navbar-nav li{
-  margin-right:5px;
-  }
+
   .btn-success.btn-outline {
       color: #5cb85c;
       padding:5px 10px !important;
@@ -182,7 +180,58 @@ hr.style14 {
   .btn-danger.btn-outline:hover {
       color: #fff;
   }
-  .navbar {min-height:32px !important}
+  .nav > li > a{
+ padding: 4px 15px!important;
+ font-size: 12px;
+ background-color: #022535;
+}
+.nav > ul{
+  background-color: #022535;
+ }
+.nav > li > ul >li a{
+  color: #fff;
+  font-size: 12px;
+  background-color: #001721!important;
+ }
+ .navbar-nav {
+  margin: 0px -15px;
+}
+.nav > li > a:hover{
+  padding: 4px 15px!important;
+  font-size: 12px;
+  background-color: #001721!important;
+ }
+ .nav > li > ul >li a:hover{
+  color:#9d9d9d;
+  font-size: 12px;
+  background-color: #00080c!important;
+ }
+ .nav > li > a:active{
+  padding: 4px 15px!important;
+  font-size: 12px;
+  background-color: #001721!important;
+ }
+ .nav > li > ul{
+  
+    font-size: 12px;
+    background-color: #001721!important;
+   }
+ .nav > li > ul >li a:active{
+
+  font-size: 12px;
+  background-color: #000102!important;
+ }
+ .nav > li > a:focus{
+  padding: 4px 15px!important;
+  font-size: 12px;
+  background-color: #001721!important;
+ }
+ .nav > li > ul >li a:focus{
+
+  font-size: 12px;
+  background-color: #000102!important;
+ }
+  .navbar {max-height:32px !important;margin-bottom: 0px;}
   .navbar-default {
     font-size: 1.15em;
     font-weight: 400;
@@ -193,12 +242,16 @@ hr.style14 {
     border-radius: 0px;
   }
   span.badge{
-      margin-top:-20px;
+      margin-top:-12px;
       margin-left:-10px;
   }
   .badge-error {
       background-color: #b94a48;
     }
+    .navbar-inverse {
+      background-color: #022535;
+      border-color: #080808;
+  }
     .badge-error:hover {
       background-color: #953b39;
     }
@@ -335,10 +388,20 @@ hr.style14 {
       border-left: 2px solid #5b9bd1;
       margin-left: -2px;
     }
-    
+    .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
+      padding-right:0px;
+    }
+    @media (min-width: 992px){
+    .col-md-3 {
+        width: 24%;
+    }
+  }
+  .panel-heading{
+    padding:5px 0px 1px 6px;
+  }
     /* Profile Content */
     .profile-content {
-      padding: 20px;
+      padding:1px 13px;
       background: #fff;
       min-height:auto;
       box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 

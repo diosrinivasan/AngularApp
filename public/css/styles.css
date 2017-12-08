@@ -4,6 +4,7 @@ nav ul li a {
   .navbar-default div div a{
     color:#FFF !important;
   }
+  
   /* Shared */
 .loginBtn {
   box-sizing: border-box;
@@ -112,7 +113,7 @@ nav ul li a {
         padding:30px 0px 0px 0px;
         text-align:center;
         color:#245a73;
-        font-size:20px;
+        font-size:15px;
       }
       .elegantshadow {
         color: #131313;

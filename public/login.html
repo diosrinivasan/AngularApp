@@ -15,13 +15,19 @@
         .card {
             padding-right: 13px;
         }
+
         .modal-header {
-    padding: 15px;
-    border-bottom: 1px solid #e5e5e5;
-    background: #024d6f;
-    color: #fff;
-}
+            padding: 15px;
+            border-bottom: 1px solid #e5e5e5;
+            background: #024d6f;
+            color: #fff;
+        }
     </style>
+
+    <!-- Enable media queries for old IE -->
+    <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <![endif]-->
 </head>
 
 <body class="login-background">
@@ -74,7 +80,7 @@
                             SIGNUP</button>
                     </form>
                 </div>
-              
+
             </div>
         </div>
     </div>
@@ -86,39 +92,39 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 style="color:#fff;text-align:center;">
-                         Login with Dpostino</h4>
+                        Login with Dpostino</h4>
                 </div>
                 <div class="modal-body">
                     <form role="form">
                         <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="usrname">
-                                <span class="glyphicon glyphicon-user"></span> Username</label>
-                            <input type="text" class="form-control" id="usrname" placeholder="Email Id/Mobile Number">
-                        </div>
-                        <div class="form-group">
-                            <label for="psw">
-                                <span class="glyphicon glyphicon-eye-open"></span> Password</label>
-                            <input type="password" class="form-control" id="psw" placeholder="Enter password">
-                        </div>
-                        <div class="checkbox">
-                                <p style="text-align:left;">
-                                        <a href="#">Forgot Password?</a>
-                                    </p>
-                        </div>
-                        
-                        </div>
-                        <div class="col-md-6"  style="margin-top:20px;">
-                                <button class="loginBtn loginBtn--facebook btn-block">
-                                    Login with Facebook
-                                </button>
-    
-                                <button class="loginBtn loginBtn--google  btn-block">
-                                    Login with Google
-                                </button>
+                            <div class="form-group">
+                                <label for="usrname">
+                                    <span class="glyphicon glyphicon-user"></span> Username</label>
+                                <input type="text" class="form-control" id="usrname" placeholder="Email Id/Mobile Number">
                             </div>
-                            <button type="submit" style="border-radius:0px;" class="btn btn-default btn-warning btn-block">
-                                    <span class="glyphicon glyphicon-off"></span> Login</button>
+                            <div class="form-group">
+                                <label for="psw">
+                                    <span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                                <input type="password" class="form-control" id="psw" placeholder="Enter password">
+                            </div>
+                            <div class="checkbox">
+                                <p style="text-align:left;">
+                                    <a href="#">Forgot Password?</a>
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6" style="margin-top:20px;">
+                            <button class="loginBtn loginBtn--facebook btn-block">
+                                Login with Facebook
+                            </button>
+
+                            <button class="loginBtn loginBtn--google  btn-block">
+                                Login with Google
+                            </button>
+                        </div>
+                        <button type="submit" style="border-radius:0px;" class="btn btn-default btn-warning btn-block">
+                            <span class="glyphicon glyphicon-off"></span> Login</button>
                     </form>
                 </div>
 
@@ -131,20 +137,27 @@
                 <a class="navbar-brand navbar-brand-centered" href="#">Dpostino</a>
                 <div class="col-md-4 navbar-right" style="padding-top:10px;">
                     <a class="btn1 green join-button">Join</a>
-    
+
                     <a class="btn1 red login-button">Login</a>
                 </div>
             </div>
-       
+
 
         </div>
     </nav>
 
-    <div class="row" style="margin-left:0px;margin-right:0px;">
+    <div class="row" style="margin-left:0px;margin-right:0px;background: #E9EBEE;">
         <div class="banner_div">
-            <p class="banner_text elegantshadow">Travel</p>
-            <div class="col-md-offset-3 col-md-6 col-xs-offset-1 col-xs-10">
-                <iframe style="margin-top:100px;height:250px;width:100%;" src="https://www.youtube.com/embed/Qt7DFLovvD8?modestbranding=1&showinfo=0"
+                <p class="col-md-offset-3 banner_text elegantshadow">Travel</p>
+            <div class="col-md-4 col-xs-4 col-sm-4 item-img"><img class="img-responsive" src="img/travel3.jpg" height="150"/></div>
+            <div class="col-md-4 col-xs-4 col-sm-4 item-img"><img class="img-responsive" src="img/travel4.jpeg"  height="150"/></div>
+            <div class="col-md-4 col-xs-4 col-sm-4 item-img"><img class="img-responsive" src="img/travel5.jpeg"  height="150"/></div>
+            <div class="col-md-4 col-xs-4 col-sm-4 item-img"><img class="img-responsive" src="img/travel3.jpg" height="150"/></div>
+            <div class="col-md-4 col-xs-4 col-sm-4 item-img"><img class="img-responsive" src="img/travel4.jpeg"  height="150"/></div>
+            <div class="col-md-4 col-xs-4 col-sm-4 item-img"><img class="img-responsive" src="img/travel5.jpeg"  height="150"/></div>
+           
+            <div class="col-md-offset-3 col-md-6 col-xs-offset-1 col-xs-10"  style="height:100px;">
+                <iframe style="height:250px;width:100%;position:relative;top:-140px;" src="https://www.youtube.com/embed/Qt7DFLovvD8?modestbranding=1&showinfo=0"
                     allowfullscreen></iframe>
             </div>
         </div>
@@ -389,15 +402,23 @@
     </footer>
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/masonry.pkgd.js"></script>
     <script src="js/owl.carousel.js"></script>
     <script>
         $(function () {
+            var $container = $('.banner_div').masonry({
+                itemSelector: '.item',
+                columnWidth: 70
+            });
             $("a.login-button").click(function () {
                 $("#loginModal").modal();
             });
             $("a.join-button").click(function () {
                 $("#registerModal").modal();
             });
+
+
+           
         });
     </script>
     <script>

@@ -324,11 +324,11 @@ a{text-decoration:none;}
       .banner_text{
         position:absolute;
         z-index:100;
-        margin:0 31%;
-        padding:30px 0px 0px 0px;
+        width:100%;
+        padding:30px 0px 0px 40px;
         text-align:center;
         color:#72838a;
-        font-size:32px;
+        font-size:28px;
         text-shadow: -1px -1px 1px #111, 2px 2px 1px #000405;
       }
   .navbar-default .navbar-nav > li > a {

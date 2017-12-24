@@ -515,6 +515,28 @@ a{text-decoration:none;}
         border-bottom-left-radius: 4px;
         
     }
+    fieldset {
+      padding: 8px 10px 8px 5px;
+      
+      font:11px sans-serif;
+      border:1px solid #cccccc;
+      }
+      legend {
+        padding: 0.2em 0.5em;
+        margin-bottom:0px;
+        border:1px solid #cccccc;
+        color:#5b9bd1;
+        font-size:13px;
+        width:30%;
+        text-align:left;
+        
+        }
+    .compose-trip{
+      display:none;
+    }
+    .initiate-request{
+      display:none;
+    }
     .panel.panel-horizontal > .panel-footer {
         border-left: 1px solid #ddd;
         border-top-left-radius: 0;

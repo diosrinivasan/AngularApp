@@ -22,6 +22,11 @@ $(function () {
             $comment.find('button[type="submit"]').removeClass('disabled');
         }
     });
+    $("button.comment-sections").click(function(){
+        var comid=$(this).attr('id').split('-');
+        $("div#show-section-"+comid[2]).toggle();
+    })
+
     $("input[name='optradio']").change(function(){
         let type=$(this).val();
         $(".compose-trip").hide();

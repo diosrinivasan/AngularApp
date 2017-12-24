@@ -22,6 +22,21 @@ $(function () {
             $comment.find('button[type="submit"]').removeClass('disabled');
         }
     });
+    $("input[name='optradio']").change(function(){
+        let type=$(this).val();
+        $(".compose-trip").hide();
+        $(".initiate-request").hide();
+        if(type=="compose trip"){
+        $(".compose-trip").show();
+        }
+        else if(type=="intiate request") {
+            $(".initiate-request").show();
+        }
+        else{
+
+
+        }
+    })
 });
 // var app = angular.module('myapp', ['ngAnimate', 'ui.bootstrap']);
 // app.factory("States", function () {

@@ -39,7 +39,7 @@
                             <span class="glyphicon glyphicon-home"></span>
                             <br/>Home</a>
                     </li>
-         
+
                     <li>
                         <a href="#">
                             <span class="glyphicon glyphicon-bell"></span>
@@ -134,7 +134,7 @@ Licensed under MIT
                             <p>User Rating</p>
                         </div>
                         <div class="servive-block servive-block-purple">
-                            <h3 class="heading-md"  style="color:#FFF;">100</h3>
+                            <h3 class="heading-md" style="color:#FFF;">100</h3>
                             <p>User Events</p>
                         </div>
 
@@ -144,7 +144,7 @@ Licensed under MIT
                 </div>
                 <div class="panel panel-default profile-content" style="margin-top:10px;border-radius:0px">
                     <div class="panel-heading">
-                 
+
                         <h5 style="margin:2px 0;font-size:12px;">Upcoming Events </h5>
                     </div>
                     <div class="panel-body">List</div>
@@ -152,24 +152,190 @@ Licensed under MIT
             </div>
             <div class="col-md-7">
                 <div class="profile-content" style="padding:0 13px;">
-                    <div class="form-group">
 
-                        <!-- <textarea placeholder="Share your trip or create a request" style="border-top:none;border-left:none;border-right:none;box-shadow:none;border-bottom-color:#ccc; " -->
-                        <!-- class="form-control" rows="3" id="comment"></textarea> -->
-                        <div class="form-group" style="padding:28px 0px;height:auto;">
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio">Compose Trip
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio">Initiate Request
-                            </label>
-                            
 
-                        </div>
+                    <!-- <textarea placeholder="Share your trip or create a request" style="border-top:none;border-left:none;border-right:none;box-shadow:none;border-bottom-color:#ccc; " -->
+                    <!-- class="form-control" rows="3" id="comment"></textarea> -->
+                    <div class="form-group" style="padding:28px 0px;height:auto;margin-bottom:6px;">
+                        <label class="radio-inline">
+                            <input type="radio" value="compose trip" name="optradio">Compose Trip
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" value="intiate request" name="optradio">Initiate Request
+                        </label>
+
+
                     </div>
+
+                </div>
+
+                <div class="profile-content compose-trip" style="padding:8px">
+                    <form>
+                        <fieldset>
+                            <legend>Compose Trip</legend>
+
+                            <div class="col-md-6">
+                                <label>Journey Type</label>
+                                <select class="form-control">
+                                    <option value="--Select--">--Select--</option>
+                                    <option value="Local">Local</option>
+                                    <option value="National">National</option>
+                                    <option value="International">International</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Journey Mode</label>
+                                <select class="form-control">
+                                    <option value="--Select--">--Select--</option>
+                                    <option value="Air">Air</option>
+                                    <option value="Train">Train</option>
+                                    <option value="Bus">Bus</option>
+                                    <option value="Car">Car</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="file" style="margin:8px 0;" class="form-control" />
+                            </div>
+                            <div class="col-md-6">
+                                <label>Destination Details</label>
+                                <input type="text" class="form-control" name="destinationdetails" id="destD" />
+                            </div>
+                            <div class="col-md-6">
+                                <label>Journey Details</label>
+                                <input type="text" class="form-control" name="journeydetails" />
+                            </div>
+                            <div class="col-md-6" style="padding-top:5px;">
+                                <label>Expected Weight</label>
+                                <input type="number" class="form-control" name="expweight" />
+                            </div>
+                            <div class="col-md-6" style="padding-top:5px;">
+                                <label>Expected No of items</label>
+                                <input type="number" class="form-control" name="expnoitems" />
+                            </div>
+                            <div class="col-md-6" style="padding-top:5px;">
+                                <label>Expected start Journey Date</label>
+                                <input type="text" class="form-control" name="expsdate" id="sourcedetails" />
+                            </div>
+                            <div class="col-md-6" style="padding-top:5px;">
+                                <label>Expected destination Journey Date</label>
+                                <input type="text" class="form-control" name="expsdate" id="destdetails" />
+                            </div>
+                            <div class="col-md-12" style="padding-top:5px;">
+                                <button class="pull-right button turquoise" style="border-radius:0px;font-size:15px;padding-bottom:10px;">Compose</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="profile-content initiate-request" style="padding:8px">
+                    <form>
+                        <fieldset>
+                            <legend>Intiate Request</legend>
+                            <div class="col-md-6">
+                                <label>Shipment Type</label>
+                                <select class="form-control">
+                                    <option value="--Select--">--Select--</option>
+                                    <option value="Local">Local</option>
+                                    <option value="National">National</option>
+                                    <option value="International">International</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Parcel Weight</label>
+                                <input type="text" class="form-control" name="parcelW" id="parcelW" />
+                            </div>
+                            <div class="col-md-6" style="padding-top:5px;">
+                                <label>Parcel Count</label>
+                                <input type="text" class="form-control" name="parcelC" id="parcelC" />
+                            </div>
+                            <div class="col-md-6" style="padding-top:5px;">
+                                <label>Parcel Type</label>
+                                <select class="form-control">
+                                    <option value="--Select--">--Select--</option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Book">Book</option>
+                                    <option value="Document">Document</option>
+                                    <option value="Food">Food</option>
+                                    <option value="Clothes">Clothes</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6" style="padding-top:5px;">
+                                <label>Parcel Pickup Location</label>
+                                <input type="text" class="form-control" name="parcelP" id="parcelP" />
+                            </div>
+                            <div class="col-md-6" style="padding-top:5px;">
+                                <label>Parcel Drop Location</label>
+                                <input type="text" class="form-control" name="parcelP" id="parcelP" />
+                            </div>
+                            <div class="col-md-6" style="padding-top:5px;">
+                                <label>Expected Date of Journey (Min)</label>
+                                <input type="text" class="form-control" name="expectedDoMi" id="expectedDoMi" />
+                            </div>
+                            <div class="col-md-6" style="padding-top:5px;">
+                                <label>Expected Date of Journey (Max)</label>
+                                <input type="text" class="form-control" name="expectedDoMa" id="expectedDoMa" />
+                            </div>
+                            <div class="col-md-6" style="padding-top:5px;">
+                                <label>Expected Date of Delivery (Min)</label>
+                                <input type="text" class="form-control" name="expectedDDMi" id="expectedDDMi" />
+                            </div>
+                            <div class="col-md-6" style="padding-top:5px;">
+                                <label>Expected Date of Delivery (Max)</label>
+                                <input type="text" class="form-control" name="expectedDDMa" id="expectedDDMa" />
+                            </div>
+                            <div class="col-md-12">
+                                <fieldset style="margin-top:10px;padding:3px 7px 10px 0px;">
+                                    <legend style="text-align:center;">Reciever Details</legend>
+                                    <div class="col-md-6" style="padding-top:5px;">
+                                        <label>Name</label>
+                                        <input type="text" class="form-control" name="firstname" id="firstname" />
+                                    </div>
+                                    <div class="col-md-6" style="padding-top:5px;">
+                                        <label>Phone no</label>
+                                        <input type="text" class="form-control" name="phoneno" id="phoneno" />
+                                    </div>
+                                    <div class="col-md-12" style="padding-top:5px;">
+                                        <label>Reciever Picture</label>
+                                        <input type="file" style="margin:8px 0;" class="form-control" />
+                                    </div>
+                                    <div class="col-md-6" style="padding-top:5px;">
+                                        <label>Phone no</label>
+                                        <input type="text" class="form-control" name="phoneno" id="phoneno" />
+                                    </div>
+                                    <div class="col-md-6" style="padding-top:5px;">
+                                        <label>Email id</label>
+                                        <input type="text" class="form-control" name="emailid" id="emailid" />
+                                    </div>
+                                    <div class="col-md-12" style="padding-top:5px;">
+                                        <label>Email id</label>
+                                        <textarea class="form-control"></textarea>
+                                    </div>
+                                    <div class="col-md-6" style="padding-top:5px;">
+                                        <label>City</label>
+                                        <input type="text" class="form-control" name="cities" id="cities" />
+                                    </div>
+                                    <div class="col-md-6" style="padding-top:5px;">
+                                        <label>State</label>
+                                        <input type="text" class="form-control" name="state" id="state" />
+                                    </div>
+                                    <div class="col-md-6" style="padding-top:5px;">
+                                        <label>Country</label>
+                                        <input type="text" class="form-control" name="country" id="country" />
+                                    </div>
+                                    <div class="col-md-6" style="padding-top:5px;">
+                                        <label>Pincode</label>
+                                        <input type="text" class="form-control" name="pincode" id="pincode" />
+                                    </div>
+
+                                </fieldset>
+                            </div>
+                            <div class="col-md-12" style="padding-top:5px;">
+                                <button class="pull-right button turquoise" style="border-radius:0px;font-size:15px;padding-bottom:10px;">Submit</button>
+                            </div>
+                        </fieldset>
+                    </form>
                 </div>
                 <hr style="border-bottom:1px solid rgb(212, 212, 212);margin:7px 0;" />
-                <div class="profile-content"  style="padding:0 13px;">
+                <div class="profile-content" style="padding:0 13px;">
                     <label class="radio-inline">
                         <input type="radio" name="optradio1">Search for Trip
                     </label>
@@ -200,115 +366,179 @@ Licensed under MIT
                 <hr style="border-bottom:1px solid rgb(212, 212, 212);margin:7px 0;" />
 
                 <div class="panel panel-default panel-horizontal profile-content" style="margin-bottom:0px;">
-                        <div class="panel-heading text-center" style="width:10em;text-align:center;">
-                            <div>
+                    <div class="panel-heading text-center" style="width:10em;text-align:center;">
+                        <div>
                             <img class="img-circle img-responsive" style="padding-top:5px;margin:0 auto;width:70px;text-align:center;" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg">
-                          </div>
-                            
-                            <div class="email" style="padding-top: 10px;">8 February 2016</div>
-                            <span><h5>2 weeks</h5><span>
                         </div>
-                        
-                        <div class="panel-body">                
-                        
-                    <!--div class="col-xs-2 col-md-3 text-center age">
+
+                        <div class="email" style="padding-top: 10px;">8 February 2016</div>
+                        <span>
+                            <h5>2 weeks</h5>
+                            <span>
+                    </div>
+
+                    <div class="panel-body" style="padding:0px 15px 4px 15px">
+
+                        <!--div class="col-xs-2 col-md-3 text-center age">
                         <img src="https://placeholdit.imgix.net/~text?txtsize=40&txt=John%20Doe&w=200&h=200" class="img-circle img-responsive" alt="" />
                     </div-->
-                    <div class="col-xs-12 col-md-12 section-box">
-                        <div class="email" style="padding-top: 10px;">johndoe@tasktick.com</div>
-                        <h2 style="font-size:20px;">
-                            Bangalore &nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-right"></span>&nbsp;&nbsp; Chennai <a href="http://bootsnipp.com/" target="_blank"></a>
-                        </h2>
-                        <p>
-                            <span><b>Type:</b> Requestor</span><br/>
-                            <span><b>Luggage: </b> 2 Bags</span><br/>
-                            <span><b>Transport:</b> Bus</span><br/>
-                        </p>
-                        <hr />
-                        <div class="row rating-desc">
-                            <div class="col-md-12">
-                                <span class=" pull-right" style="padding-right:15px;"><a href="#">View Details</a></span></span>
+                        <div class="col-xs-12 col-md-12 section-box">
+                            <div class="email" style="padding-top: 10px;">Srinivasan
+                                <a class="btn btn-danger pull-right" style="border-radius:0px;">Traveller</a>
+                            </div>
+                            <h2 style="font-size:17px;color:#e67e22">
+                                Bangalore &nbsp;&nbsp;
+                                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;&nbsp; Chennai
+                                <a href="http://bootsnipp.com/" target="_blank"></a>
+                            </h2>
+                            <table border="0" cellpadding="0" cellspacing="0" style="width:100%;table-layout:fixed !important;border-collapse:collapse;">
+                                <tr>
+                                <td>
+                                <span>
+                                    <b>Date:</b> Requestor</span>
+                                <br/>
+                                <span>
+                                    <b>Mode: </b> 2 Bags</span>
+                                <br/>
+                                <span>
+                                    <b>Weight:</b> Bus</span>
+                                <br/>
+                                <span>
+                                    <b>Item Count:</b> Bus</span>
+                                <br/>
+                                <span>
+                                        <b>Amount:</b> 5000 <span class="glyphicon glyphicon-arrow-right"> </span>5000 <a class="btn btn-default" style="border-radius:0px;">Bid</a>
+                                    </td>    
+                                    <td><img class="img-responsive" src="img/traveller.jpg"/></td>
+                                    </tr>
+                                    </table>
+                            <hr />
+                            <div class="row rating-desc">
+                                <div class="col-md-12">
+                                    <span class=" pull-right" style="padding-right:15px;">
+                                        <a href="#">View Details</a>
+                                    </span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
+
                     </div>
-    
-                        </div>                            
-                        
-                    </div>
+
+                </div>
                 <hr style="border-bottom:1px solid rgb(212, 212, 212);margin:7px 0;" />
                 <div class="panel panel-default panel-horizontal profile-content" style="margin-bottom:0px;">
-                        <div class="panel-heading text-center" style="width:10em;text-align:center;">
-                            <div>
+                    <div class="panel-heading text-center" style="width:10em;text-align:center;">
+                        <div>
                             <img class="img-circle img-responsive" style="padding-top:5px;margin:0 auto;width:70px;text-align:center;" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg">
-                          </div>
-                            
-                            <div class="email" style="padding-top: 10px;">8 February 2016</div>
-                            <span><h5>2 weeks</h5><span>
                         </div>
-                        
-                        <div class="panel-body">                
-                        
-                    <!--div class="col-xs-2 col-md-3 text-center age">
+
+                        <div class="email" style="padding-top: 10px;">8 February 2016</div>
+                        <span>
+                            <h5>2 weeks</h5>
+                            <span>
+                    </div>
+
+                    <div class="panel-body">
+
+                        <!--div class="col-xs-2 col-md-3 text-center age">
                         <img src="https://placeholdit.imgix.net/~text?txtsize=40&txt=John%20Doe&w=200&h=200" class="img-circle img-responsive" alt="" />
                     </div-->
                     <div class="col-xs-12 col-md-12 section-box">
-                        <div class="email" style="padding-top: 10px;">johndoe@tasktick.com</div>
-                        <h2 style="font-size:20px;">
-                            Bangalore &nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-right"></span>&nbsp;&nbsp; Chennai <a href="http://bootsnipp.com/" target="_blank"></a>
-                        </h2>
-                        <p>
-                            <span><b>Type:</b> Requestor</span><br/>
-                            <span><b>Luggage: </b> 2 Bags</span><br/>
-                            <span><b>Transport:</b> Bus</span><br/>
-                        </p>
-                        <hr />
-                        <div class="row rating-desc">
-                            <div class="col-md-12">
-                                <span class=" pull-right" style="padding-right:15px;"><a href="#">View Details</a></span></span>
+                            <div class="email" style="padding-top: 10px;">Srinivasan
+                                <a class="btn btn-danger pull-right" style="border-radius:0px;">Requestor</a>
+                            </div>
+                            <h2 style="font-size:17px;color:#e67e22">
+                                Bangalore &nbsp;&nbsp;
+                                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;&nbsp; Chennai
+                                <a href="http://bootsnipp.com/" target="_blank"></a>
+                            </h2>
+                            <table border="0" cellpadding="0" cellspacing="0" style="width:100%;table-layout:fixed !important;border-collapse:collapse;">
+                                <tr>
+                                <td>
+                                <span>
+                                    <b>Date:</b> Requestor</span>
+                                <br/>
+                                <span>
+                                    <b>Parcel weight: </b> 2 Bags</span>
+                                <br/>
+                             
+                                <span>
+                                    <b>Item Count:</b> Bus</span>
+                                <br/>
+                                <span>
+                                        <span>
+                                                <b>Parcel Type:</b> Bus</span>
+                                            <br/>   
+                                        <b>Amount:</b> 5000 <span class="glyphicon glyphicon-arrow-right"> </span>5000 <a class="btn btn-default" style="border-radius:0px;">Bid</a>
+                                    </td>    
+                                    <td><img class="img-responsive" src="img/traveller.jpg"/></td>
+                                    </tr>
+                                    </table>
+                            <hr />
+                            <div class="row rating-desc">
+                                <div class="col-md-12">
+                                    <span class=" pull-right" style="padding-right:15px;">
+                                        <a href="#">View Details</a>
+                                    </span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
+
                     </div>
-    
-                        </div>                            
-                        
-                    </div>
+
+                </div>
                 <hr style="border-bottom:1px solid rgb(212, 212, 212);margin:7px 0;" />
                 <div class="panel panel-default panel-horizontal profile-content" style="margin-bottom:0px;">
-                        <div class="panel-heading text-center" style="width:10em;text-align:center;">
-                            <div>
+                    <div class="panel-heading text-center" style="width:10em;text-align:center;">
+                        <div>
                             <img class="img-circle img-responsive" style="padding-top:5px;margin:0 auto;width:70px;text-align:center;" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg">
-                          </div>
-                            
-                            <div class="email" style="padding-top: 10px;">8 February 2016</div>
-                            <span><h5>2 weeks</h5><span>
                         </div>
-                        
-                        <div class="panel-body">                
-                        
-                    <!--div class="col-xs-2 col-md-3 text-center age">
+
+                        <div class="email" style="padding-top: 10px;">8 February 2016</div>
+                        <span>
+                            <h5>2 weeks</h5>
+                            <span>
+                    </div>
+
+                    <div class="panel-body">
+
+                        <!--div class="col-xs-2 col-md-3 text-center age">
                         <img src="https://placeholdit.imgix.net/~text?txtsize=40&txt=John%20Doe&w=200&h=200" class="img-circle img-responsive" alt="" />
                     </div-->
-                    <div class="col-xs-12 col-md-12 section-box">
-                        <div class="email" style="padding-top: 10px;">johndoe@tasktick.com</div>
-                        <h2 style="font-size:20px;">
-                            Bangalore &nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-right"></span>&nbsp;&nbsp; Chennai <a href="http://bootsnipp.com/" target="_blank"></a>
-                        </h2>
-                        <p>
-                            <span><b>Type:</b> Requestor</span><br/>
-                            <span><b>Luggage: </b> 2 Bags</span><br/>
-                            <span><b>Transport:</b> Bus</span><br/>
-                        </p>
-                        <hr />
-                        <div class="row rating-desc">
-                            <div class="col-md-12">
-                                <span class=" pull-right" style="padding-right:15px;"><a href="#">View Details</a></span></span>
+                        <div class="col-xs-12 col-md-12 section-box">
+                            <div class="email" style="padding-top: 10px;">johndoe@tasktick.com</div>
+                            <h2 style="font-size:20px;">
+                                Bangalore &nbsp;&nbsp;
+                                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;&nbsp; Chennai
+                                <a href="http://bootsnipp.com/" target="_blank"></a>
+                            </h2>
+                            <p>
+                                <span>
+                                    <b>Type:</b> Requestor</span>
+                                <br/>
+                                <span>
+                                    <b>Luggage: </b> 2 Bags</span>
+                                <br/>
+                                <span>
+                                    <b>Transport:</b> Bus</span>
+                                <br/>
+                            </p>
+                            <hr />
+                            <div class="row rating-desc">
+                                <div class="col-md-12">
+                                    <span class=" pull-right" style="padding-right:15px;">
+                                        <a href="#">View Details</a>
+                                    </span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
+
                     </div>
-    
-                        </div>                            
-                        
-                    </div>
+
+                </div>
             </div>
             <div class="col-md-3">
 
@@ -332,7 +562,7 @@ Licensed under MIT
                                     </p>
                                 </div>
                                 <div>
-                                    <a href="#" class="btn btn-link btn-block"  style="text-align:right;" >
+                                    <a href="#" class="btn btn-link btn-block" style="text-align:right;">
                                         View Offers
                                     </a>
                                 </div>
@@ -342,7 +572,8 @@ Licensed under MIT
                 </div>
                 <div class="panel panel-default" style="border-radius:0px;border-color:transparent;background:transparent;margin-bottom:0px;">
                     <div class="panel-heading">
-                        <h5 style="margin:2px 0;">Ongoing Events </h5></div>
+                        <h5 style="margin:2px 0;">Ongoing Events </h5>
+                    </div>
                     <div class="panel-body">
                         <div class="row">
                             <div class="card">
@@ -381,7 +612,7 @@ Licensed under MIT
     <script src="js/script.js"></script>
     <script>
         $(document).ready(function () {
-            $('#datepickerSource').datepicker({
+            $('#datepickerSource,#sourcedetails,#destdetails').datepicker({
                 autoclose: true,
                 todayHighlight: true
             }).datepicker('update', new Date()); //Initialise any date pickers
@@ -416,6 +647,9 @@ Licensed under MIT
                 productIds[product.name] = product.id;
             });
             $('#sourceS').typeahead({
+                source: productNames
+            });
+            $('#destD').typeahead({
                 source: productNames
             });
             $('#destinationD').typeahead({

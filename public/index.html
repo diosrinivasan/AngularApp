@@ -13,7 +13,141 @@
     <link rel="stylesheet" href="css/datepicker.css" />
     <link rel="stylesheet" href="css/datepicker.css" />
     <link rel="stylesheet" href="css/styles.css" />
-
+<style>
+    .control-group {
+    display: inline-block;
+    vertical-align: top;
+    background: #fff;
+    text-align: left;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    padding: 30px;
+    width: 200px;
+    height: 210px;
+    margin: 10px;
+  }
+  .control {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  .control__indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+  }
+  .control--radio .control__indicator {
+    border-radius: 50%;
+  }
+  .control:hover input ~ .control__indicator,
+  .control input:focus ~ .control__indicator {
+    background: #ccc;
+  }
+  .control input:checked ~ .control__indicator {
+    background: #2aa1c0;
+  }
+  .control:hover input:not([disabled]):checked ~ .control__indicator,
+  .control input:checked:focus ~ .control__indicator {
+    background: #0e647d;
+  }
+  .control input:disabled ~ .control__indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .control__indicator:after {
+    content: '';
+    position: absolute;
+    display: none;
+  }
+  .control input:checked ~ .control__indicator:after {
+    display: block;
+  }
+  .control--checkbox .control__indicator:after {
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0px 2px 3px 0px;
+    transform: rotate(45deg);
+  }
+  .control--checkbox input:disabled ~ .control__indicator:after {
+    border-color: #7b7b7b;
+  }
+  .control--radio .control__indicator:after {
+    left: 7px;
+    top: 7px;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: #fff;
+  }
+  .control--radio input:disabled ~ .control__indicator:after {
+    background: #7b7b7b;
+  }
+  .select {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  .select select {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 15px;
+    outline: 0;
+    border: 0;
+    border-radius: 0;
+    background: #e6e6e6;
+    color: #7b7b7b;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  .select select::-ms-expand {
+    display: none;
+  }
+  .select select:hover,
+  .select select:focus {
+    color: #000;
+    background: #ccc;
+  }
+  .select select:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .select__arrow {
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-style: solid;
+    border-width: 8px 5px 0 5px;
+    border-color: #7b7b7b transparent transparent transparent;
+  }
+  .select select:hover ~ .select__arrow,
+  .select select:focus ~ .select__arrow {
+    border-top-color: #000;
+  }
+  .select select:disabled ~ .select__arrow {
+    border-top-color: #ccc;
+  }
+  
+</style>
 </head>
 
 <body>
@@ -157,13 +291,8 @@ Licensed under MIT
                     <!-- <textarea placeholder="Share your trip or create a request" style="border-top:none;border-left:none;border-right:none;box-shadow:none;border-bottom-color:#ccc; " -->
                     <!-- class="form-control" rows="3" id="comment"></textarea> -->
                     <div class="form-group" style="padding:28px 0px;height:auto;margin-bottom:6px;">
-                        <label class="radio-inline">
-                            <input type="radio" value="compose trip" name="optradio">Compose Trip
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" value="intiate request" name="optradio">Initiate Request
-                        </label>
-
+                        <label class="control control--checkbox" style="font-weight:normal;">Compose Trip     <input type="checkbox" name="optradio" value="Compose Trip"/>      <div class="control__indicator"></div>    </label> 
+                        <label class="control control--checkbox"  style="font-weight:normal;">Initiate Request     <input type="checkbox" name="optradio" value="Initiate Request"/>      <div class="control__indicator"></div>    </label> 
 
                     </div>
 
@@ -172,13 +301,12 @@ Licensed under MIT
                 <div class="profile-content compose-trip" style="padding:8px">
                     <form>
                         <fieldset>
-                            <legend>Compose Trip</legend>
+                            <legend style="text-align:center;">Compose Trip</legend>
 
                             <div class="col-md-6">
                                 <label>Journey Type</label>
                                 <select class="form-control">
                                     <option value="--Select--">--Select--</option>
-                                    <option value="Local">Local</option>
                                     <option value="National">National</option>
                                     <option value="International">International</option>
                                 </select>
@@ -193,31 +321,37 @@ Licensed under MIT
                                     <option value="Car">Car</option>
                                 </select>
                             </div>
-                            <div class="col-md-12">
-                                <input type="file" style="margin:8px 0;" class="form-control" />
+                            <div class="row" style="padding:0px 15px">
+                            <div class="col-md-6">
+                                <input type="file" onchange="readURL1(this);"  style="margin:8px 0;" class="form-control" />
                             </div>
                             <div class="col-md-6">
-                                <label>Destination Details</label>
+                                    <label>&nbsp;</label>
+                                    <img id="blah1" src="#" alt="your image" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Source Details</label>
                                 <input type="text" class="form-control" name="destinationdetails" id="destD" />
                             </div>
                             <div class="col-md-6">
-                                <label>Journey Details</label>
+                                <label>Destination Details</label>
                                 <input type="text" class="form-control" name="journeydetails" />
                             </div>
                             <div class="col-md-6" style="padding-top:5px;">
-                                <label>Expected Weight</label>
+                                <label>Weight can be carried </label>
                                 <input type="number" class="form-control" name="expweight" />
                             </div>
                             <div class="col-md-6" style="padding-top:5px;">
-                                <label>Expected No of items</label>
+                                <label>No of packages can carry</label>
                                 <input type="number" class="form-control" name="expnoitems" />
                             </div>
                             <div class="col-md-6" style="padding-top:5px;">
-                                <label>Expected start Journey Date</label>
+                                <label>Journey Start date</label>
                                 <input type="text" class="form-control" name="expsdate" id="sourcedetails" />
                             </div>
                             <div class="col-md-6" style="padding-top:5px;">
-                                <label>Expected destination Journey Date</label>
+                                <label>Journey End Date</label>
                                 <input type="text" class="form-control" name="expsdate" id="destdetails" />
                             </div>
                             <div class="col-md-12" style="padding-top:5px;">
@@ -229,26 +363,25 @@ Licensed under MIT
                 <div class="profile-content initiate-request" style="padding:8px">
                     <form>
                         <fieldset>
-                            <legend>Intiate Request</legend>
+                            <legend style="text-align:center;">Intiate Request</legend>
                             <div class="col-md-6">
                                 <label>Shipment Type</label>
                                 <select class="form-control">
                                     <option value="--Select--">--Select--</option>
-                                    <option value="Local">Local</option>
                                     <option value="National">National</option>
                                     <option value="International">International</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <label>Parcel Weight</label>
+                                <label>Shipment Weight</label>
                                 <input type="text" class="form-control" name="parcelW" id="parcelW" />
                             </div>
                             <div class="col-md-6" style="padding-top:5px;">
-                                <label>Parcel Count</label>
+                                <label>Shipment Count</label>
                                 <input type="text" class="form-control" name="parcelC" id="parcelC" />
                             </div>
                             <div class="col-md-6" style="padding-top:5px;">
-                                <label>Parcel Type</label>
+                                <label>Shipments</label>
                                 <select class="form-control">
                                     <option value="--Select--">--Select--</option>
                                     <option value="Electronics">Electronics</option>
@@ -258,20 +391,30 @@ Licensed under MIT
                                     <option value="Clothes">Clothes</option>
                                 </select>
                             </div>
+                            <div class="row" style="padding:0px 13px;">
+                                    <div class="col-md-6" style="padding-top:5px;">
+                                        
+                                        <input type="file" onchange="readURL(this);" style="margin:8px 0;" class="form-control" />
+                                    </div>
+                                    <div class="col-md-6" style="padding-top:5px;">
+                                          
+                                            <img id="blah" src="#" alt="your image" />
+                                        </div>
+                                    </div>
                             <div class="col-md-6" style="padding-top:5px;">
-                                <label>Parcel Pickup Location</label>
+                                <label>Shipment Pickup Location</label>
                                 <input type="text" class="form-control" name="parcelP" id="parcelP" />
                             </div>
                             <div class="col-md-6" style="padding-top:5px;">
-                                <label>Parcel Drop Location</label>
+                                <label>Shipment Drop Location</label>
                                 <input type="text" class="form-control" name="parcelP" id="parcelP" />
                             </div>
                             <div class="col-md-6" style="padding-top:5px;">
-                                <label>Expected Date of Journey (Min)</label>
+                                <label>Start Date</label>
                                 <input type="text" class="form-control" name="expectedDoMi" id="expectedDoMi" />
                             </div>
                             <div class="col-md-6" style="padding-top:5px;">
-                                <label>Expected Date of Journey (Max)</label>
+                                <label>End Date</label>
                                 <input type="text" class="form-control" name="expectedDoMa" id="expectedDoMa" />
                             </div>
                             <div class="col-md-6" style="padding-top:5px;">
@@ -293,10 +436,7 @@ Licensed under MIT
                                         <label>Phone no</label>
                                         <input type="text" class="form-control" name="phoneno" id="phoneno" />
                                     </div>
-                                    <div class="col-md-12" style="padding-top:5px;">
-                                        <label>Reciever Picture</label>
-                                        <input type="file" style="margin:8px 0;" class="form-control" />
-                                    </div>
+                                
                                     <div class="col-md-6" style="padding-top:5px;">
                                         <label>Phone no</label>
                                         <input type="text" class="form-control" name="phoneno" id="phoneno" />
@@ -306,21 +446,27 @@ Licensed under MIT
                                         <input type="text" class="form-control" name="emailid" id="emailid" />
                                     </div>
                                     <div class="col-md-12" style="padding-top:5px;">
-                                        <label>Email id</label>
+                                        <label>Address</label>
                                         <textarea class="form-control"></textarea>
                                     </div>
+                                    <div class="col-md-6" style="padding-top:5px;">
+                                            <label>Country</label>
+                                            <select class="form-control" name="country" id="country">
+                                                <option value="--Select--">--Select--</option>
+                                                <option value="IND">India</option>
+                                                <option value="SING">Singapore</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6" style="padding-top:5px;">
+                                                <label>State</label>
+                                                <input type="text" class="form-control" name="state" id="state" />
+                                            </div>
                                     <div class="col-md-6" style="padding-top:5px;">
                                         <label>City</label>
                                         <input type="text" class="form-control" name="cities" id="cities" />
                                     </div>
-                                    <div class="col-md-6" style="padding-top:5px;">
-                                        <label>State</label>
-                                        <input type="text" class="form-control" name="state" id="state" />
-                                    </div>
-                                    <div class="col-md-6" style="padding-top:5px;">
-                                        <label>Country</label>
-                                        <input type="text" class="form-control" name="country" id="country" />
-                                    </div>
+                                   
+                                 
                                     <div class="col-md-6" style="padding-top:5px;">
                                         <label>Pincode</label>
                                         <input type="text" class="form-control" name="pincode" id="pincode" />
@@ -708,6 +854,22 @@ Licensed under MIT
     <script>
         $(document).ready(function () {
             $('#datepickerSource,#sourcedetails,#destdetails').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            }).datepicker('update', new Date()); //Initialise any date pickers
+            $('#sourcedetails').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            }).datepicker('update', new Date()); //Initialise any date pickers
+            $('#expectedDoMa').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            }).datepicker('update', new Date()); //Initialise any date pickers
+            $('#expectedDoMi').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            }).datepicker('update', new Date()); //Initialise any date pickers
+            $('#destdetails').datepicker({
                 autoclose: true,
                 todayHighlight: true
             }).datepicker('update', new Date()); //Initialise any date pickers

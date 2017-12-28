@@ -1,6 +1,50 @@
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            var filename=input.files[0]["name"];
+            var ext = filename.split('.').pop().toLowerCase();
+            if($.inArray(ext, ['gif','png','jpg','jpeg','pdf']) == -1) {
+                alert('invalid extension!');
+                return false;
+            }
+            $('#blah').show();
+            $('#blah')
+                .attr('src', e.target.result)
+                .width(50)
+                .height(50);
+               };
+       
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+function readURL1(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            var filename=input.files[0]["name"];
+            var ext = filename.split('.').pop().toLowerCase();
+            if($.inArray(ext, ['gif','png','jpg','jpeg','pdf']) == -1) {
+                alert('invalid extension!');
+                return false;
+            }
+            $('#blah1').show();
+            $('#blah1')
+                .attr('src', e.target.result)
+                .width(50)
+                .height(50);      
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 $(function () {
 
-  
+    $('#blah').hide();
+    $('#blah1').hide();
     $('.panel-google-plus > .panel-footer > .input-placeholder, .panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > button[type="reset"]').on('click', function (event) {
         var $panel = $(this).closest('.panel-google-plus');
         $comment = $panel.find('.panel-google-plus-comment');
@@ -28,13 +72,15 @@ $(function () {
     })
 
     $("input[name='optradio']").change(function(){
+        $("input[name='optradio']").prop('checked', false);
+        $(this).prop('checked', true);
         let type=$(this).val();
         $(".compose-trip").hide();
         $(".initiate-request").hide();
-        if(type=="compose trip"){
+        if(type=="Compose Trip"){
         $(".compose-trip").show();
         }
-        else if(type=="intiate request") {
+        else if(type=="Initiate Request") {
             $(".initiate-request").show();
         }
         else{

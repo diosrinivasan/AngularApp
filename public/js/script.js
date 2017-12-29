@@ -42,7 +42,30 @@ function readURL1(input) {
     }
 }
 $(function () {
-
+    $('#journey-type').change(function(){
+        var journeytype=$(this).val();
+        $("div.journey-show").hide();
+        if(journeytype=="International"){
+            $("div.journey-show").show();
+        }
+    })
+    $('[rel="popover"]').popover({
+        container: 'body',
+        html: true,
+        content: function () {
+            var clone = $($(this).data('popover-content')).clone(true).removeClass('hide');
+            return clone;
+        }
+    }).click(function(e) {
+        e.preventDefault();
+    });
+    $('#journey-type1').change(function(){
+        var journeytype=$(this).val();
+        $("div.journey-show1").hide();
+        if(journeytype=="International"){
+            $("div.journey-show1").show();
+        }
+    })
     $('#blah').hide();
     $('#blah1').hide();
     $('.panel-google-plus > .panel-footer > .input-placeholder, .panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > button[type="reset"]').on('click', function (event) {

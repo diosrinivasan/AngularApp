@@ -59,6 +59,7 @@ $(function () {
     }).click(function(e) {
         e.preventDefault();
     });
+    
     $('#journey-type1').change(function(){
         var journeytype=$(this).val();
         $("div.journey-show1").hide();

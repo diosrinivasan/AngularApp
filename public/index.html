@@ -25,6 +25,12 @@
     height: 210px;
     margin: 10px;
   }
+  .glyphicon-plane{
+      transform:rotate(90deg);
+      -ms-transform:rotate(90deg);
+      -o-transform:rotate(90deg);
+      -webkit-transform:rotate(90deg);
+  }
   .control {
     position: relative;
     padding-left: 30px;
@@ -305,7 +311,7 @@ Licensed under MIT
 
                             <div class="col-md-6">
                                 <label>Journey Type</label>
-                                <select class="form-control">
+                                <select class="form-control" id="journey-type">
                                     <option value="--Select--">--Select--</option>
                                     <option value="National">National</option>
                                     <option value="International">International</option>
@@ -321,6 +327,15 @@ Licensed under MIT
                                     <option value="Car">Car</option>
                                 </select>
                             </div>
+                     
+                                <div class="col-md-12 journey-show"  style="margin:8px 0px">
+                                        <label>Country</label>
+                               <select class="form-control">
+                                   <option value="--Select--">--Select--</option>
+                                   <option value="India">India</option>
+                               </select>
+                                </div>
+                            
                             <div class="row" style="padding:0px 15px">
                             <div class="col-md-6">
                                 <input type="file" onchange="readURL1(this);"  style="margin:8px 0;" class="form-control" />
@@ -366,7 +381,7 @@ Licensed under MIT
                             <legend style="text-align:center;">Intiate Request</legend>
                             <div class="col-md-6">
                                 <label>Shipment Type</label>
-                                <select class="form-control">
+                                <select class="form-control" id="journey-type1">
                                     <option value="--Select--">--Select--</option>
                                     <option value="National">National</option>
                                     <option value="International">International</option>
@@ -375,6 +390,13 @@ Licensed under MIT
                             <div class="col-md-6">
                                 <label>Shipment Weight</label>
                                 <input type="text" class="form-control" name="parcelW" id="parcelW" />
+                            </div>
+                            <div class="col-md-12 journey-show1"  style="margin:8px 0px">
+                                    <label>Country</label>
+                                <select class="form-control">
+                                    <option value="--Select--">--Select--</option>
+                                    <option value="India">India</option>
+                                </select>
                             </div>
                             <div class="col-md-6" style="padding-top:5px;">
                                 <label>Shipment Count</label>
@@ -511,15 +533,15 @@ Licensed under MIT
                 </div>
                 <hr style="border-bottom:1px solid rgb(212, 212, 212);margin:7px 0;" />
 
-                <div class="panel panel-default panel-horizontal profile-content" style="margin-bottom:0px;">
+                <div class="panel panel-default  badger-right badger-danger panel-horizontal profile-content"   data-badger="Traveller" style="margin-bottom:0px;">
                     <div class="panel-heading text-center" style="width:10em;text-align:center;">
                         <div>
-                            <img class="img-circle img-responsive" style="padding-top:5px;margin:0 auto;width:70px;text-align:center;" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg">
+                            <img class="img-circle img-responsive" style="padding-top:5px;margin:0 auto;width:45px;text-align:center;" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg">
                         </div>
 
-                        <div class="email" style="padding-top: 10px;">8 February 2016</div>
+                        <div class="email" style="padding-top: 10px;">Srinivasan</div>
                         <span>
-                            <h5>2 weeks</h5>
+                            <h5>8 February 2016</h5>
                             <span>
                     </div>
 
@@ -529,12 +551,12 @@ Licensed under MIT
                         <img src="https://placeholdit.imgix.net/~text?txtsize=40&txt=John%20Doe&w=200&h=200" class="img-circle img-responsive" alt="" />
                     </div-->
                         <div class="col-xs-12 col-md-12 section-box">
-                            <div class="email" style="padding-top: 10px;">Srinivasan
-                                <a class="btn btn-danger pull-right" style="border-radius:0px;">Traveller</a>
+                            <div class="email" style="padding-top: 10px;">
+                                
                             </div>
                             <h2 style="font-size:17px;color:#e67e22">
                                 Bangalore &nbsp;&nbsp;
-                                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;&nbsp; Chennai
+                                <span class="glyphicon glyphicon-plane"></span>&nbsp;&nbsp; Chennai
                                 <a href="http://bootsnipp.com/" target="_blank"></a>
                             </h2>
                             <table border="0" cellpadding="0" cellspacing="0" style="width:100%;table-layout:fixed !important;border-collapse:collapse;">
@@ -555,31 +577,14 @@ Licensed under MIT
                                         <span>
                                             <b>Amount:</b> 5000
                                             <span class="glyphicon glyphicon-arrow-right"> </span>5000
-                                            <a class="btn btn-default" style="border-radius:0px;">Bid</a>
+                                            <a rel="popover" data-popover-content=".myPopover" class="btn btn-default" style="border-radius:0px;">Bid</a>
                                     </td>
-                                    <td>
-                                        <img class="img-responsive" src="img/traveller.jpg" />
+                                    <td  style="width:30%;vertical-align:top;">
+                                        <img class="img-responsive" src="img/traveller.jpg" style="border:2px solid #d0d0d0" />
                                     </td>
                                 </tr>
                             </table>
-                            <hr />
-                            <div class="row rating-desc">
-                                    <div class="col-md-2">
-                                        <button id="comment-section-2" class="comment-sections btn btn-default">
-                                            <span style="color:#000;" class="glyphicon glyphicon-comment"></span>
-                                        </button>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control" />
-                                    </div>
-                                    <div class="col-md-4" style="padding-right:15px;">
-                                        <span class=" pull-right">
-                                            <a href="#" class="btn btn-default">Submit</a>
-                                        </span>
-    
-                                    </div>
-    
-                                </div>
+                           
                         </div>
 
                     </div>
@@ -620,15 +625,15 @@ Licensed under MIT
                         </table>
                     </div>
                 <hr style="border-bottom:1px solid rgb(212, 212, 212);margin:7px 0;" />
-                <div class="panel panel-default panel-horizontal profile-content" style="margin-bottom:0px;">
+                <div data-badger="Requestor"  class="panel badger-right badger-info panel-default panel-horizontal profile-content" style="margin-bottom:0px;">
                     <div class="panel-heading text-center" style="width:10em;text-align:center;">
                         <div>
-                            <img class="img-circle img-responsive" style="padding-top:5px;margin:0 auto;width:70px;text-align:center;" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg">
+                            <img class="img-circle img-responsive" style="padding-top:5px;margin:0 auto;width:45px;text-align:center;" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg">
                         </div>
 
-                        <div class="email" style="padding-top: 10px;">8 February 2016</div>
+                        <div class="email" style="padding-top: 10px;">Srinivasan</div>
                         <span>
-                            <h5>2 weeks</h5>
+                            <h5>8 February 2016</h5>
                             <span>
                     </div>
 
@@ -638,12 +643,12 @@ Licensed under MIT
                         <img src="https://placeholdit.imgix.net/~text?txtsize=40&txt=John%20Doe&w=200&h=200" class="img-circle img-responsive" alt="" />
                     </div-->
                         <div class="col-xs-12 col-md-12 section-box">
-                            <div class="email" style="padding-top: 10px;">Srinivasan
-                                <a class="btn btn-danger pull-right" style="border-radius:0px;">Requestor</a>
+                            <div class="email" style="padding-top: 10px;">
+                                
                             </div>
                             <h2 style="font-size:17px;color:#e67e22">
                                 Bangalore &nbsp;&nbsp;
-                                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;&nbsp; Chennai
+                                <span class="glyphicon glyphicon-plane" ></span>&nbsp;&nbsp; Chennai
                                 <a href="http://bootsnipp.com/" target="_blank"></a>
                             </h2>
                             <table border="0" cellpadding="0" cellspacing="0" style="width:100%;table-layout:fixed !important;border-collapse:collapse;">
@@ -665,31 +670,23 @@ Licensed under MIT
                                             <br/>
                                             <b>Amount:</b> 5000
                                             <span class="glyphicon glyphicon-arrow-right"> </span>5000
-                                            <a class="btn btn-default" style="border-radius:0px;">Bid</a>
+                                            <a rel="popover" data-popover-content=".myPopover" class="btn btn-default" style="border-radius:0px;">Bid</a>
                                     </td>
-                                    <td>
-                                        <img class="img-responsive" src="img/traveller.jpg" />
+                                    <td style="width:30%;vertical-align:top;">
+                                        <img class="img-responsive" src="img/traveller.jpg" style="border:2px solid #d0d0d0" />
                                     </td>
                                 </tr>
                             </table>
-                            <hr />
-                            <div class="row rating-desc">
-                                <div class="col-md-2">
-                                    <button id="comment-section-1" class="comment-sections btn btn-default">
-                                        <span style="color:#000;" class="glyphicon glyphicon-comment"></span>
-                                    </button>
+                            <div class="myPopover hide">
+                                  <div class="form-group">
+                                      <label>Price</label>
+                                      <table>
+                                          <tr><td>
+                                      <input type="number" style="width:80px;" class="form-control" placeholder="min"/></td><td>&nbsp;&nbsp;-&nbsp;&nbsp;</td><td><input type="number" style="width:80px;" min="0" class="form-control" placeholder="max"/></td></tr>
+                                  
+                                    </table>
+                                  </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" />
-                                </div>
-                                <div class="col-md-4" style="padding-right:15px;">
-                                    <span class=" pull-right">
-                                        <a href="#" class="btn btn-default">Submit</a>
-                                    </span>
-
-                                </div>
-
-                            </div>
                         </div>
 
 
@@ -730,56 +727,7 @@ Licensed under MIT
                         </tr>
                     </table>
                 </div>
-                <hr style="border-bottom:1px solid rgb(212, 212, 212);margin:7px 0;" />
-                <div class="panel panel-default panel-horizontal profile-content" style="margin-bottom:0px;">
-                    <div class="panel-heading text-center" style="width:10em;text-align:center;">
-                        <div>
-                            <img class="img-circle img-responsive" style="padding-top:5px;margin:0 auto;width:70px;text-align:center;" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg">
-                        </div>
-
-                        <div class="email" style="padding-top: 10px;">8 February 2016</div>
-                        <span>
-                            <h5>2 weeks</h5>
-                            <span>
-                    </div>
-
-                    <div class="panel-body">
-
-                        <!--div class="col-xs-2 col-md-3 text-center age">
-                        <img src="https://placeholdit.imgix.net/~text?txtsize=40&txt=John%20Doe&w=200&h=200" class="img-circle img-responsive" alt="" />
-                    </div-->
-                        <div class="col-xs-12 col-md-12 section-box">
-                            <div class="email" style="padding-top: 10px;">johndoe@tasktick.com</div>
-                            <h2 style="font-size:20px;">
-                                Bangalore &nbsp;&nbsp;
-                                <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;&nbsp; Chennai
-                                <a href="http://bootsnipp.com/" target="_blank"></a>
-                            </h2>
-                            <p>
-                                <span>
-                                    <b>Type:</b> Requestor</span>
-                                <br/>
-                                <span>
-                                    <b>Luggage: </b> 2 Bags</span>
-                                <br/>
-                                <span>
-                                    <b>Transport:</b> Bus</span>
-                                <br/>
-                            </p>
-                            <hr />
-                            <div class="row rating-desc">
-                                <div class="col-md-12">
-                                    <span class=" pull-right" style="padding-right:15px;">
-                                        <a href="#">View Details</a>
-                                    </span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
+               
             </div>
             <div class="col-md-3">
 

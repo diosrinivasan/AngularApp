@@ -29,7 +29,25 @@
     -o-transition: .3s;
     cursor: url(http://cur.cursors-4u.net/symbols/sym-1/sym46.cur), auto;
   }
-
+  .glyphicon-comment
+  {
+    color:#000 !important;
+  }
+  .comment-color-box{
+    display:none;
+    
+  }
+.comment-color-box{
+  background: #ececec;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  margin: 0px;
+  padding: 0px;
+  
+}
+.comment-publish-box{
+  padding:10px 0px;margin:0px; background:#dedcdc;    border-bottom: 1px solid #cec7c7;
+}
   .link:hover {
     color: #2ecc71;
     border-bottom: 2px dotted #2ecc71;
@@ -864,7 +882,37 @@
         h1.heading {
           font-size: 3.55em;
         }
+      
       }
+      @media (max-width: 450px) {
+      div.panel-body{
+        padding:1px!important;
+      }
+      div.panel-default{
+        clear: both;
+      }
+      .search-for-trip{
+        padding:10px!important;
+      }
+      #sourceS,#destinationD,#datepickerSource{
+        margin-bottom:5px;
+      }
+      .common-padding{
+        padding-left:0px;
+        padding-right:0px;
+      }
+      .section-box
+      {
+        padding-left:1px;
+      }
+      div.col-xs-12{
+        padding-left:2px;
+      }
+      div.section-box h2{
+        padding-top:10px;
+        padding-left:3px;
+      }
+    }
       @media (min-width: 760px) {
         h1.heading {
           font-size: 3.05em;

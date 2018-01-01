@@ -3,9 +3,9 @@ function readURL(input) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            var filename=input.files[0]["name"];
+            var filename = input.files[0]["name"];
             var ext = filename.split('.').pop().toLowerCase();
-            if($.inArray(ext, ['gif','png','jpg','jpeg','pdf']) == -1) {
+            if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg', 'pdf']) == -1) {
                 alert('invalid extension!');
                 return false;
             }
@@ -14,8 +14,8 @@ function readURL(input) {
                 .attr('src', e.target.result)
                 .width(50)
                 .height(50);
-               };
-       
+        };
+
 
         reader.readAsDataURL(input.files[0]);
     }
@@ -25,9 +25,9 @@ function readURL1(input) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            var filename=input.files[0]["name"];
+            var filename = input.files[0]["name"];
             var ext = filename.split('.').pop().toLowerCase();
-            if($.inArray(ext, ['gif','png','jpg','jpeg','pdf']) == -1) {
+            if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg', 'pdf']) == -1) {
                 alert('invalid extension!');
                 return false;
             }
@@ -35,19 +35,25 @@ function readURL1(input) {
             $('#blah1')
                 .attr('src', e.target.result)
                 .width(50)
-                .height(50);      
+                .height(50);
         };
 
         reader.readAsDataURL(input.files[0]);
     }
 }
 $(function () {
-    $('#journey-type').change(function(){
-        var journeytype=$(this).val();
+    $('#journey-type').change(function () {
+        var journeytype = $(this).val();
         $("div.journey-show").hide();
-        if(journeytype=="International"){
+        if (journeytype == "International") {
             $("div.journey-show").show();
         }
+    })
+    $("a.bid-box").click(function(){
+        var idattr=$(this).attr('id').split('-')[2];
+        $("div.comment-color-box").hide();
+        $("div#comment-color-box-"+idattr).show();
+      
     })
     $('[rel="popover"]').popover({
         container: 'body',
@@ -56,14 +62,14 @@ $(function () {
             var clone = $($(this).data('popover-content')).clone(true).removeClass('hide');
             return clone;
         }
-    }).click(function(e) {
+    }).click(function (e) {
         e.preventDefault();
     });
-    
-    $('#journey-type1').change(function(){
-        var journeytype=$(this).val();
+
+    $('#journey-type1').change(function () {
+        var journeytype = $(this).val();
         $("div.journey-show1").hide();
-        if(journeytype=="International"){
+        if (journeytype == "International") {
             $("div.journey-show1").show();
         }
     })
@@ -90,24 +96,32 @@ $(function () {
             $comment.find('button[type="submit"]').removeClass('disabled');
         }
     });
-    $("button.comment-sections").click(function(){
-        var comid=$(this).attr('id').split('-');
-        $("div#show-section-"+comid[2]).toggle();
+    $("button.comment-sections").click(function () {
+        var comid = $(this).attr('id').split('-');
+        $("div#show-section-" + comid[2]).toggle();
     })
 
-    $("input[name='optradio']").change(function(){
-        $("input[name='optradio']").prop('checked', false);
-        $(this).prop('checked', true);
-        let type=$(this).val();
+    $("input[name='optradio']").change(function () {
+
+        let type = $(this).val();
         $(".compose-trip").hide();
         $(".initiate-request").hide();
-        if(type=="Compose Trip"){
-        $(".compose-trip").show();
+        if (type == "Compose Trip") {
+            if($(this).prop('checked')){
+            $("input[name='optradio']").prop('checked', false);
+            $(this).prop('checked', true);
+            $(".compose-trip").show();
+            }
         }
-        else if(type=="Initiate Request") {
-            $(".initiate-request").show();
+        else if (type == "Initiate Request") {
+            if($(this).prop('checked')){
+                $("input[name='optradio']").prop('checked', false);
+                $(this).prop('checked', true);
+                $(".initiate-request").show();
+            }
+          
         }
-        else{
+        else {
 
 
         }

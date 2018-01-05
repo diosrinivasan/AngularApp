@@ -160,7 +160,7 @@
                     <p>One Time Password (OTP) has been sent to your mobile number xxxxxx1234 and email id xxxxxxx123@gmail.com,
                         enter the same to sign-up.</p>
                     <div class="row" style="padding:0px;">
-                            <form id="verifyotpsignup">
+                            <form id="verifyotplogin">
                         <div class="col-md-offset-1 col-md-4">
                          
                             <input type="text" class="form-control" style="padding:20px 0px;margin:0 auto;" id="signupotp" placeholder="OTP" name="signupotp" required>
@@ -650,6 +650,11 @@
                 event.preventDefault();
                 $("#loginModal").modal('hide');
                })
+	   	$("form#verifyotplogin").submit(function (event) {
+                event.preventDefault();
+			$("#forgotPasswordModal").modal('hide');
+                $("#recreatepasswordModal").modal('show');
+               })
             $("a.login-button").click(function () {
                 $("#loginModal").modal();
             });
@@ -659,7 +664,7 @@
             $("a#forgot-password").click(function () {
                  $("#loginModal").modal('hide');
         	    storeValue('timeduration','');  		
-
+              
 	         $("#forgotPasswordModal").modal('show');
             });
             $("form#join_dpostino").submit(function (event) {

@@ -621,11 +621,15 @@
             });
             $("a#forgot-password").click(function () {
                  $("#loginModal").modal('hide');
+        	    storeValue('timeduration','');  		
+
 	         $("#forgotPasswordModal").modal('show');
             });
             $("form#join_dpostino").submit(function (event) {
                 event.preventDefault();
                 $("#registerModal").modal('hide');
+		    storeValue('timeduration','');  		
+
                 $("#registerOTPModal").modal('show');
             })
 

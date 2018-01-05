@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="js/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="js/assets/owl.theme.default.min.css" />
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
     <style>
         .card {
             padding-right: 13px;
@@ -60,27 +60,31 @@
         }
 
         /* Responsive layout - makes a two column-layout instead of four columns */
-        @media (max-width:1024px){
-            .logo-adjust{
-            margin-left:225px !important;
+
+        @media (max-width:1024px) {
+            .logo-adjust {
+                margin-left: 225px !important;
             }
         }
+
         @media (max-width: 767px) {
-            .logo-adjust{
-            margin-left:0px !important;
+            .logo-adjust {
+                margin-left: 0px !important;
             }
-            .btn1{
+            .btn1 {
                 margin-right: 8px!important;
-    padding: 4px 9px!important;
+                padding: 4px 9px!important;
             }
         }
+
         @media (min-width:767px) and (max-width: 800px) {
-            .logo-adjust{
-            margin-left:225px !important;
+            .logo-adjust {
+                margin-left: 225px !important;
             }
         }
+
         @media (max-width: 800px) {
-        
+
             .column {
                 width: 50%;
             }
@@ -89,8 +93,8 @@
         /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 
         @media (max-width: 600px) {
-            .logo-adjust{
-            margin-left:0px;
+            .logo-adjust {
+                margin-left: 0px;
             }
             .column {
                 width: 100%;
@@ -105,6 +109,43 @@
 </head>
 
 <body class="login-background">
+    <div class="modal fade" id="registerOTPModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 style="color:#FFF;;text-align:center;">
+                        Verify OTP</h4>
+                </div>
+                <div class="modal-body">
+                    <p>One Time Password (OTP) has been sent to your mobile number xxxxxx1234 and email id xxxxxxx123@gmail.com,
+                        enter the same to sign-up.</p>
+                    <div class="row" style="padding:0px;">
+                            <form id="verifyotpsignup">
+                        <div class="col-md-offset-1 col-md-4">
+                         
+                            <input type="text" class="form-control" style="padding:20px 0px;margin:0 auto;" id="signupotp" placeholder="OTP" name="signupotp" required>
+
+                        </div>
+                        <div class="col-md-offset-1 col-md-4">
+                                   <input readonly type="text" class="form-control timeintervalcount" style="padding:20px 0px;margin:0 auto;" id="timersignup" name="timersignup" required>
+       
+                               </div>
+                        <div class="col-md-12" style="margin-top:10px;padding-right:15px;">
+                                <button type="submit" style="border-radius:0px;" class="btn btn-default btn-warning btn-block">
+                                        Verify</button>
+                                <button type="submit" style="border-radius:0px;" class="btn btn-default btn-warning btn-block">
+                                                Resend OTP</button>       
+                        </div>
+                    </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="registerModal" role="dialog">
         <div class="modal-dialog">
 
@@ -116,29 +157,29 @@
                         Join Dpostino</h4>
                 </div>
                 <div class="modal-body">
-                    <form role="form">
+                    <form role="form" id="join_dpostino">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
+                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="lastname" placeholder="Last Name" name="lastname">
+                                <input type="text" class="form-control" id="lastname" placeholder="Last Name" name="lastname" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Email id" name="email" id="emailid">
+                                <input type="email" class="form-control" placeholder="Email id" name="email" id="emailid" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Mobile" name="mobileno" id="mobileno">
+                                <input type="text" class="form-control" placeholder="Mobile" name="mobileno" id="mobileno" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Country" name="country" id="country">
+                                <input type="text" class="form-control" placeholder="Country" name="country" id="country" required>
                             </div>
                             <div class="form-group">
-                                <input type="password" placeholder="Password" class="form-control" id="psw">
+                                <input type="password" placeholder="Password" class="form-control" id="psw" required>
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" value="" checked>Stay Signed in</label>
+                                    <input type="checkbox" value="" checked required>Stay Signed in</label>
                             </div>
                         </div>
                         <div class="col-md-6 login-facebook">
@@ -159,7 +200,7 @@
         </div>
     </div>
     <div class="modal fade" id="loginModal" role="dialog">
-        <div class="modal-dialog">
+        <div class="modal-dialog  modal-sm">
 
             <!-- Modal content-->
             <div class="modal-content">
@@ -170,7 +211,7 @@
                 </div>
                 <div class="modal-body">
                     <form role="form">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label for="usrname">
                                     <span class="glyphicon glyphicon-user"></span> Username</label>
@@ -188,15 +229,7 @@
                             </div>
 
                         </div>
-                        <div class="col-md-6" style="margin-top:20px;">
-                            <button class="loginBtn loginBtn--facebook btn-block">
-                                Login with Facebook
-                            </button>
 
-                            <button class="loginBtn loginBtn--google  btn-block">
-                                Login with Google
-                            </button>
-                        </div>
                         <button type="submit" style="border-radius:0px;" class="btn btn-default btn-warning btn-block">
                             <span class="glyphicon glyphicon-off"></span> Login</button>
                     </form>
@@ -225,50 +258,50 @@
             <p class="banner_text elegantshadow">Travel Earn & Enjoy</p>
             <div class="row" style="background:#000;margin:0px;max-height:350px;overflow-y:hidden;">
                 <div id="overlay"></div>
-                <div  style="height:400px!important;overflow-y:hidden !important;">
-                <div id="container">
-                    
-                            <div class="grid-sizer"></div>
-                    
-                            <div class="item1">
-                                <img src="/img/travel20.jpg" class="image">
-                               
-                            </div>
-                            <div class="item1">
-                                <img src="/img/travel12.jpg" class="image">
-                             
-                            </div>
-                            <div class="item1">
-                                <img src="/img/travel13.jpg" class="image">
-                               
-                            </div>
-                            <div class="item1">
-                                <img src="/img/travel14.jpg" class="image">
-                              
-                            </div>
-                            <div class="item1">
-                                <img src="/img/travel15.jpg" class="image">
-                             
-                            </div>
-                            <div class="item1">
-                                <img src="/img/travel16.jpg" class="image">
-                                
-                            </div>
-                            <div class="item1">
-                                <img src="/img/travel11.jpg" class="image">
-                               
-                            </div>
-                            <div class="item1">
-                                <img src="/img/travel18.jpg" class="image">
-                               
-                            </div>
-                            <div class="item1">
-                                <img src="/img/travel19.jpg" class="image">
-                               
-                            </div>
-                            
+                <div style="height:400px!important;overflow-y:hidden !important;">
+                    <div id="container">
+
+                        <div class="grid-sizer"></div>
+
+                        <div class="item1">
+                            <img src="/img/travel20.jpg" class="image">
+
                         </div>
+                        <div class="item1">
+                            <img src="/img/travel12.jpg" class="image">
+
+                        </div>
+                        <div class="item1">
+                            <img src="/img/travel13.jpg" class="image">
+
+                        </div>
+                        <div class="item1">
+                            <img src="/img/travel14.jpg" class="image">
+
+                        </div>
+                        <div class="item1">
+                            <img src="/img/travel15.jpg" class="image">
+
+                        </div>
+                        <div class="item1">
+                            <img src="/img/travel16.jpg" class="image">
+
+                        </div>
+                        <div class="item1">
+                            <img src="/img/travel11.jpg" class="image">
+
+                        </div>
+                        <div class="item1">
+                            <img src="/img/travel18.jpg" class="image">
+
+                        </div>
+                        <div class="item1">
+                            <img src="/img/travel19.jpg" class="image">
+
+                        </div>
+
                     </div>
+                </div>
             </div>
             <div class="col-md-offset-3 col-md-6 col-xs-offset-1 col-xs-10" style="height:100px;position: absolute;">
                 <iframe style="height:250px;width:100%;position:relative;top:-140px;z-index:1000;" src="https://www.youtube.com/embed/Qt7DFLovvD8?modestbranding=1&showinfo=0"
@@ -506,15 +539,25 @@
         <!--Copyright-->
         <div class="footer-copyright">
             <div class="container-fluid" style="font-size:14px;padding:10px 0px;;color:#8c8c8c">
-                    <ul class="nav nav-pills" style="margin:0px;">
-                <li style="padding-top:3px;padding-left:4
+                <ul class="nav nav-pills" style="margin:0px;">
+                    <li style="padding-top:3px;padding-left:4
                 
                 px;">Dpostino © 2015</li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Cookie Policy</a></li>
-                <li><a href="#">Copyright Policy</a></li>
-                <li><a href="#">Privacy Policy</a></li>
+                    <li>
+                        <a href="#">Terms of Service</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy</a>
+                    </li>
+                    <li>
+                        <a href="#">Cookie Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Copyright Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
             </div>
         </div>
         <!--/.Copyright-->
@@ -525,9 +568,11 @@
     <script src="js/masonry.js"></script>
     <script src="js/main.js"></script>
     <script src="js/owl.carousel.js"></script>
+    <script src="js/jaaulde-cookies.js"></script>
+    <script src="js/bootbox.js"></script>
     <script>
         $(function () {
-           
+
             $("a.login-button").click(function () {
                 $("#loginModal").modal();
             });
@@ -535,12 +580,17 @@
                 $("#registerModal").modal();
             });
 
-
+            $("form#join_dpostino").submit(function (event) {
+                event.preventDefault();
+                $("#registerModal").modal('hide');
+                $("#registerOTPModal").modal('show');
+            })
 
         });
     </script>
     <script>
         $(document).ready(function () {
+
             var owl = $('.owl-carousel');
             owl.owlCarousel({
                 items: 3,
@@ -572,6 +622,96 @@
                 owl.trigger('stop.owl.autoplay')
             })
         })
+        	
+	function getTimeRemaining(endtime) {
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+
+function initializeClock(endtime) {
+	 var timeinterval=0;
+  function updateClock() {
+    var t = getTimeRemaining(endtime);
+	var timduration=('0' + t.minutes).slice(-2)+":"+ ('0' + t.seconds).slice(-2);
+    $(".timeintervalcount").val(timduration);
+    if (t.total <= 0) {
+clearInterval(timeinterval);
+storeValue('timeduration','');  		
+ bootbox.confirm({
+    message: "Your'e Session Expired",
+	size:"small",
+    buttons: {
+        confirm: {
+            label: 'Ok',
+            className: 'btn-success'
+        }
+       
+    },
+    callback: function (result2) {
+       if(result2==true)
+	   {
+
+	
+	   window.location=window.location.reload;
+	   }
+    }
+   });
+
+    }
+
+
+  }
+
+  updateClock();
+
+timeinterval = setInterval(updateClock,1000);
+}
+
+ if(getStoredValue('timeduration')!=null && getStoredValue('timeduration')!="")
+ {
+
+var	storedvalue=getStoredValue('timeduration').split(':');
+
+var deadline = new Date(Date.parse(getStoredValue('timeduration')) + 8*60 * 1000);	 
+initializeClock(deadline);
+
+ }
+ else
+ {
+var date=new Date();	 
+storeValue('timeduration',date);
+
+var deadline = new Date(Date.parse(date) + 8*60 * 1000);	 
+initializeClock(deadline); 
+
+ }
+
+
+function storeValue(key, value) {
+    if (localStorage) {
+        localStorage.setItem(key, value);
+    } else {
+        $.cookies.set(key, value);
+    }
+}
+
+function getStoredValue(key) {
+    if (localStorage) {
+        return localStorage.getItem(key);
+    } else {
+        return $.cookies.get(key);
+    }
+}
     </script>
 </body>
 

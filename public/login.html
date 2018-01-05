@@ -109,6 +109,43 @@
 </head>
 
 <body class="login-background">
+    <div class="modal fade" id="forgotPasswordModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 style="color:#FFF;;text-align:center;">
+                        Verify OTP</h4>
+                </div>
+                <div class="modal-body">
+                    <p>One Time Password (OTP) has been sent to your mobile number xxxxxx1234 and email id xxxxxxx123@gmail.com,
+                        enter the same to sign-up.</p>
+                    <div class="row" style="padding:0px;">
+                            <form id="verifyotpsignup">
+                        <div class="col-md-offset-1 col-md-4">
+                         
+                            <input type="text" class="form-control" style="padding:20px 0px;margin:0 auto;" id="signupotp" placeholder="OTP" name="signupotp" required>
+
+                        </div>
+                        <div class="col-md-offset-1 col-md-4">
+                                   <input readonly type="text" class="form-control timeintervalcount" style="padding:20px 0px;margin:0 auto;" id="timersignup" name="timersignup" required>
+       
+                               </div>
+                        <div class="col-md-12" style="margin-top:10px;padding-right:15px;">
+                                <button type="submit" style="border-radius:0px;" class="btn btn-default btn-warning btn-block">
+                                        Verify</button>
+                                <button type="submit" style="border-radius:0px;" class="btn btn-default btn-warning btn-block">
+                                                Resend OTP</button>       
+                        </div>
+                    </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>	
     <div class="modal fade" id="registerOTPModal" role="dialog">
         <div class="modal-dialog">
 
@@ -210,21 +247,21 @@
                         Login with Dpostino</h4>
                 </div>
                 <div class="modal-body">
-                    <form role="form">
+                    <form role="form" id="LoginFormDpostino">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="usrname">
                                     <span class="glyphicon glyphicon-user"></span> Username</label>
-                                <input type="text" class="form-control" id="usrname" placeholder="Email Id/Mobile Number">
+                                <input type="text" class="form-control" id="usrname" placeholder="Email Id/Mobile Number" required>
                             </div>
                             <div class="form-group">
                                 <label for="psw">
                                     <span class="glyphicon glyphicon-eye-open"></span> Password</label>
-                                <input type="password" class="form-control" id="psw" placeholder="Enter password">
+                                <input type="password" class="form-control" id="psw" placeholder="Enter password" required>
                             </div>
                             <div class="checkbox">
                                 <p style="text-align:left;">
-                                    <a href="#">Forgot Password?</a>
+                                    <a href="#" id="forgot-password">Forgot Password?</a>
                                 </p>
                             </div>
 
@@ -572,14 +609,20 @@
     <script src="js/bootbox.js"></script>
     <script>
         $(function () {
-
+           $("form#LoginFormDpostino").submit(function (event) {
+                event.preventDefault();
+                $("#loginModal").modal('hide');
+               })
             $("a.login-button").click(function () {
                 $("#loginModal").modal();
             });
             $("a.join-button").click(function () {
                 $("#registerModal").modal();
             });
-
+            $("a#forgot-password").click(function () {
+                 $("#loginModal").modal('hide');
+	         $("#forgotPasswordModal").modal('show');
+            });
             $("form#join_dpostino").submit(function (event) {
                 event.preventDefault();
                 $("#registerModal").modal('hide');

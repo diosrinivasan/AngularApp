@@ -17,26 +17,24 @@
         .card {
             padding-right: 13px;
         }
-
         .modal-header {
             padding: 15px;
             border-bottom: 1px solid #e5e5e5;
             background: #024d6f;
             color: #fff;
         }
-
+      .col-md-12{
+            padding-right:15px;
+        }
         /* Create four equal columns that floats next to each other */
-
         .column {
             float: left;
             width: 10%;
             padding: 10px;
         }
-
         .column img {
             margin-top: 12px;
         }
-
         #overlay {
             position: absolute;
             left: 0;
@@ -48,25 +46,19 @@
             text-align: center;
             background: #022635c7;
             height: 350px;
-
         }
-
         /* Clear floats after the columns */
-
         .row:after {
             content: "";
             display: table;
             clear: both;
         }
-
         /* Responsive layout - makes a two column-layout instead of four columns */
-
         @media (max-width:1024px) {
             .logo-adjust {
                 margin-left: 225px !important;
             }
         }
-
         @media (max-width: 767px) {
             .logo-adjust {
                 margin-left: 0px !important;
@@ -76,22 +68,17 @@
                 padding: 4px 9px!important;
             }
         }
-
         @media (min-width:767px) and (max-width: 800px) {
             .logo-adjust {
                 margin-left: 225px !important;
             }
         }
-
         @media (max-width: 800px) {
-
             .column {
                 width: 50%;
             }
         }
-
         /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-
         @media (max-width: 600px) {
             .logo-adjust {
                 margin-left: 0px;
@@ -118,24 +105,24 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 style="color:#FFF;;text-align:center;">
-                        Creat New Password</h4>
+                        Create New Password</h4>
                 </div>
                 <div class="modal-body">
                     
                     <div class="row" style="padding:0px;">
                             <form id="recreatepassword">
-                        <div class="col-md-12">
-                         
-                            <input type="text" class="form-control" id="newpasswordreen"  name="newpasswordre" required>
+                        <div class="col-md-12" >
+                            <label>New Password</label>
+                            <input type="text" class="form-control"  id="newpasswordreen"  name="newpasswordre" required>
 
                         </div>
-                        <div class="col-md-12">
-                                 
+                        <div class="col-md-12"  style="margin-top:10px;">
+                            <label>Reenter New Password</label>         
         <input type="text" class="form-control" id="newpasswordreen"  name="newpasswordreen" required>
                                </div>
-                        <div class="col-md-12" style="margin-top:10px;padding-right:15px;">
+                        <div class="col-md-12" style="margin-top:10px;">
                                 <button type="submit" style="border-radius:0px;" class="btn btn-default btn-warning btn-block">
-                                        Verify</button>
+                                        Submit</button>
                                       
                         </div>
                     </form>
@@ -170,7 +157,7 @@
                                    <input readonly type="text" class="form-control timeintervalcount" style="padding:20px 0px;margin:0 auto;" id="timersignup" name="timersignup" required>
        
                                </div>
-                        <div class="col-md-12" style="margin-top:10px;padding-right:15px;">
+                        <div class="col-md-12" style="margin-top:10px;">
                                 <button type="submit" style="border-radius:0px;" class="btn btn-default btn-warning btn-block">
                                         Verify</button>
                                 <button type="submit" style="border-radius:0px;" class="btn btn-default btn-warning btn-block">
@@ -207,7 +194,7 @@
                                    <input readonly type="text" class="form-control timeintervalcount" style="padding:20px 0px;margin:0 auto;" id="timersignup" name="timersignup" required>
        
                                </div>
-                        <div class="col-md-12" style="margin-top:10px;padding-right:15px;">
+                        <div class="col-md-12" style="margin-top:10px;">
                                 <button type="submit" style="border-radius:0px;" class="btn btn-default btn-warning btn-block">
                                         Verify</button>
                                 <button type="submit" style="border-radius:0px;" class="btn btn-default btn-warning btn-block">
@@ -232,7 +219,8 @@
                 </div>
                 <div class="modal-body">
                     <form role="form" id="join_dpostino">
-                        <div class="col-md-6">
+                        <div class="row">
+                        <div class="col-md-6" >
                             <div class="form-group">
                                 <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" required>
                             </div>
@@ -256,7 +244,7 @@
                                     <input type="checkbox" value="" checked required>Stay Signed in</label>
                             </div>
                         </div>
-                        <div class="col-md-6 login-facebook">
+                        <div class="col-md-6 login-facebook"  style="padding-right:15px;">
                             <button class="loginBtn loginBtn--facebook btn-block">
                                 Join with Facebook
                             </button>
@@ -265,8 +253,11 @@
                                 Join with Google
                             </button>
                         </div>
+                        <div class="col-md-12">
                         <button type="submit" style="border-radius:0px;" class="btn btn-default btn-warning btn-block">
                             SIGNUP</button>
+                        </div>
+                    </div>
                     </form>
                 </div>
 
@@ -671,15 +662,12 @@
                 event.preventDefault();
                 $("#registerModal").modal('hide');
 		    storeValue('timeduration','');  		
-
                 $("#registerOTPModal").modal('show');
             })
-
         });
     </script>
     <script>
         $(document).ready(function () {
-
             var owl = $('.owl-carousel');
             owl.owlCarousel({
                 items: 3,
@@ -700,7 +688,6 @@
                     1000: {
                         items: 3,
                         nav: true,
-
                     }
                 }
             });
@@ -726,7 +713,6 @@
     'seconds': seconds
   };
 }
-
 function initializeClock(endtime) {
 	 var timeinterval=0;
   function updateClock() {
@@ -736,56 +722,25 @@ function initializeClock(endtime) {
     if (t.total <= 0) {
 clearInterval(timeinterval);
 storeValue('timeduration','');  		
- bootbox.confirm({
-    message: "Your'e Session Expired",
-	size:"small",
-    buttons: {
-        confirm: {
-            label: 'Ok',
-            className: 'btn-success'
-        }
-       
-    },
-    callback: function (result2) {
-       if(result2==true)
-	   {
-
-	
-	   window.location=window.location.reload;
-	   }
+ 
     }
-   });
-
-    }
-
-
   }
-
   updateClock();
-
 timeinterval = setInterval(updateClock,1000);
 }
-
  if(getStoredValue('timeduration')!=null && getStoredValue('timeduration')!="")
  {
-
 var	storedvalue=getStoredValue('timeduration').split(':');
-
 var deadline = new Date(Date.parse(getStoredValue('timeduration')) + 8*60 * 1000);	 
 initializeClock(deadline);
-
  }
  else
  {
 var date=new Date();	 
 storeValue('timeduration',date);
-
 var deadline = new Date(Date.parse(date) + 8*60 * 1000);	 
 initializeClock(deadline); 
-
  }
-
-
 function storeValue(key, value) {
     if (localStorage) {
         localStorage.setItem(key, value);
@@ -793,7 +748,6 @@ function storeValue(key, value) {
         $.cookies.set(key, value);
     }
 }
-
 function getStoredValue(key) {
     if (localStorage) {
         return localStorage.getItem(key);

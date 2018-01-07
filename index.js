@@ -9,4 +9,7 @@ app.get('/', function (req, res) {
 app.get('/login', function (req, res) {
     res.sendFile(__dirname + '/public/login.html');
 });
-app.listen(process.env.PORT);
+app.get('/profile', function (req, res) {
+    res.sendFile(__dirname + '/public/profile.html');
+});
+app.listen(process.env.PORT||7000);

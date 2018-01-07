@@ -190,6 +190,43 @@
 .well{
     border-radius: 2px;
    
+}   
+.color-grey{
+    color:#999;
+}
+.btn-warning {
+    color: #fff;
+    background-color: #024d6f;
+    border-color: #016d9e;
+}
+ .btn-warning:active {
+    color: #fff;
+    background-color: #024d6f !important;
+    border-color: #016d9e !important;
+}    
+        .btn-warning:hover {
+    color: #fff;
+    background-color: #024d6f;
+    border-color: #016d9e;
+}
+ .btn-warning:focus {
+    color: #fff;
+    background-color: #024d6f;
+    border-color: #016d9e;
+}   
+.btn-warning:visited {
+    color: #fff;
+    background-color: #024d6f;
+    border-color: #016d9e;
+}
+#profile-background{
+        
+        background-repeat: repeat-x;
+        background-size: cover;
+        background: url('../img/bgcolor.jpg');
+        height: 250px;
+        width: 100%
+    
 }
 .review-block {
     background-color: #FAFAFA;

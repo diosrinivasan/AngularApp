@@ -296,6 +296,7 @@
         }
         .login-background{
           background:#E9EBEE;
+          height: auto;
         }
         .banner_text_1{
           margin:0;
@@ -377,11 +378,14 @@
       rgba(255,255,255,0.2) 100%
     );
   }
-  .btn-warning {
-    color: #fff;
-    background-color: #024d6f !important;
-    border-color: #003750 !important;
-  }
+  
+  .ongoing-events{
+    padding:5px 6px 5px 0px !important;
+    background:#fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    transition: box-shadow .25s;
+}
   .button.gradient:hover {
     background-image: -webkit-gradient(
       linear,

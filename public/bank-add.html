@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dpostino | Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Poiret One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+.formBox{
+	margin-top: 90px;
+	padding: 50px;
+}
+.formBox  h1{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	margin-bottom: 50px;
+	text-transform: uppercase;
+	font-size: 48px;
+}
+.inputBox{
+	position: relative;
+	box-sizing: border-box;
+	margin-bottom: 50px;
+}
+.inputBox .inputText{
+	position: absolute;
+    font-size: 24px;
+    line-height: 50px;
+    transition: .5s;
+    opacity: .5;
+}
+.inputBox .input{
+	position: relative;
+	width: 100%;
+	height: 50px;
+	background: transparent;
+	border: none;
+    outline: none;
+    font-size: 24px;
+    border-bottom: 1px solid rgba(0,0,0,.5);
+
+}
+.focus .inputText{
+	transform: translateY(-30px);
+	font-size: 18px;
+	opacity: 1;
+	color: #00bcd4;
+
+}
+textarea{
+	height: 100px !important;
+}
+.button{
+	width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: #03A9F4;
+    color: #fff;
+}
+.ifc-code{
+    display:none;
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse" style="z-index:10000;border-radius:0px;margin-bottom:0px;" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <span class="glyphicon glyphicon-equalizer large-icon" aria-hidden="true">
+                        <span>Dpostino.com</span>
+                    </span>
+                </a>
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-home"></span>
+                            <br/>Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-bell"></span>
+                            <span class="badge badge-error">5</span>
+                            <br/>Notification</a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <br/>Me
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Notification</a>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Profile</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-cog"></span>
+                            <br/>Settings
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Notification</a>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Profile</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container"  style="padding:40px 0px;">
+        <div class="col-sm-12" style="padding:15px;">
+            <form>
+                    <fieldset>
+                        <legend  style="text-align:center;">Add Bank Account</legend>
+                       
+                <div class="row" style="padding:20px 20px;">
+                        <div class="col-sm-12">
+								<div class="inputBox ">
+									<div class="inputText">Account Holder Name</div>
+									<input type="text" name="" class="input">
+								</div>
+							</div>
+
+							
+                            <div class="row"  style="padding:20px 20px;">
+                              
+                            <div class="col-sm-12" style="margin-bottom:20px;">
+                                    <fieldset>
+                                            <legend  style="text-align:center;">Do you have IFSC Code</legend>
+                                        
+                                    <div class="form-group" style="padding:8px 0px;height:auto;margin-bottom:10px;">
+                                            <label class="control control--checkbox"  style="font-weight:normal;">Yes
+                                                <input type="checkbox" class="" name="optradio1" value="Yes" />
+                                                <div class="control__indicator"></div>
+                                            </label>
+                                            <label class="control control--checkbox" style="font-weight:normal;">No
+                                                <input type="checkbox" class=""  name="optradio1" value="No" checked />
+                                                <div class="control__indicator"></div>
+                                            </label>
+                    
+                                        </div>
+                                        </fieldset>
+
+                            </div>
+                            <div class="row ifc-code"   style="padding:20px 20px;">
+                            <div class="col-sm-6">
+                                    <div class="inputBox">
+                                        <div class="inputText">Enter IFSC Code</div>
+                                        <input type="text" name="" class="input">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button class="btn btn-warning">Confirm IFSC Code</button>   
+                                </div>
+                            </div>
+                                <div class="row ifc-code"   style="padding:0px 20px;">
+                                <div class="col-sm-6">
+                                        <div class="inputBox">
+                                            <div class="inputText">Bank Name</div>
+                                            <input type="text" name="" class="input">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                            <div class="inputBox">
+                                                <div class="inputText">City</div>
+                                                <input type="text" name="" class="input">
+                                            </div>
+                                        </div>   
+                                        <div class="col-sm-3">
+                                                <div class="inputBox">
+                                                    <div class="inputText">Branch Name</div>
+                                                    <input type="text" name="" class="input">
+                                                </div>
+                                            </div> 
+                                        </div>  
+                                        <div class="row"   style="padding:0px 20px;">
+                                                <div class="col-sm-4">
+                                                        <div class="inputBox">
+                                                            <div class="inputText">Bank Account no</div>
+                                                            <input type="text" name="" class="input">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                            <div class="inputBox">
+                                                                <div class="inputText">ReConfirm </div>
+                                                                <input type="text" name="" class="input">
+                                                            </div>
+                                                        </div>  
+                                                        <div class="col-sm-4">
+                                                                <div class="inputBox">
+                                                                   
+                                                                    <select  name="" class="input">
+                                                                        <option>Account type</option>
+                                                                        <option>Savings</option>
+                                                                        <option>Current</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>        
+                                        </div> 
+                                        <div class="col-sm-12">
+                                                <div class="col-sm-6">
+                                                        <button class="btn btn-warning btn-lg">Save and Continue</button>   
+                                                    </div>    
+                                        </div>  
+                        </div>
+            </div>
+            </fieldset>
+            </form>
+        </div>
+    </div>
+    <footer class="page-footer navbar navbar-default">
+
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="container-fluid" style="font-size:14px;padding:10px 0px;;color:#8c8c8c">
+                <ul class="nav nav-pills" style="margin:0px;">
+                    <li style="padding-top:3px;padding-left:4px;">Dpostino © 2015</li>
+                    <li>
+                        <a href="#">Terms of Service</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy</a>
+                    </li>
+                    <li>
+                        <a href="#">Cookie Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Copyright Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+            </div>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/bootstrap3-typeahead.js"></script>
+    <script src="js/script.js"></script>
+    <script type="text/javascript">
+        $(".input").focus(function() {
+            $(this).parent().addClass("focus");
+        })
+    </script>
+</body>
+
+</html>

@@ -180,7 +180,30 @@ $(function () {
         var comid = $(this).attr('id').split('-');
         $("div#show-section-" + comid[2]).toggle();
     })
-
+    $("input[name='optradio1']").change(function () {
+        
+                let type = $(this).val();
+                $(".ifc-code").hide();
+                if (type == "Yes") {
+                    if($(this).prop('checked')){
+                    $("input[name='optradio1']").prop('checked', false);
+                    $(this).prop('checked', true);
+                    $(".ifc-code").show();
+                    }
+                }
+                else if (type == "No") {
+                    if($(this).prop('checked')){
+                        $("input[name='optradio1']").prop('checked', false);
+                        $(this).prop('checked', true);
+                        $(".ifc-code").hide();
+                    }
+                  
+                }
+                else {
+        
+        
+                }
+            })
     $("input[name='optradio']").change(function () {
 
         let type = $(this).val();

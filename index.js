@@ -12,4 +12,10 @@ app.get('/login', function (req, res) {
 app.get('/profile', function (req, res) {
     res.sendFile(__dirname + '/public/profile.html');
 });
+app.get('/addbank', function (req, res) {
+    res.sendFile(__dirname + '/public/bank-add.html');
+});
+app.get('/wallet', function (req, res) {
+    res.sendFile(__dirname + '/public/wallet.html');
+});
 app.listen(process.env.PORT||7000);

@@ -121,6 +121,7 @@ $(document).ready(function () {
 });
 
 $(function () {
+    $("[rel='popover']").popover();
     $('#journey-type').change(function () {
         var journeytype = $(this).val();
         $("div.journey-show").hide();

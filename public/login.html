@@ -681,6 +681,11 @@
 			$("#forgotPasswordModal").modal('hide');
                 $("#recreatepasswordModal").modal('show');
                })
+		    $(".nav li").on("click", function() {
+      $(".nav li").removeClass("active");
+      $(this).addClass("active");
+    });
+
             $("a.login-button").click(function () {
                 $("#loginModal").modal();
             });

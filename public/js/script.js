@@ -145,6 +145,10 @@ $(function () {
     }).click(function (e) {
         e.preventDefault();
     });
+    $(".nav li").on("click", function() {
+      $(".nav li").removeClass("active");
+      $(this).addClass("active");
+    });
 
     $('#journey-type1').change(function () {
         var journeytype = $(this).val();

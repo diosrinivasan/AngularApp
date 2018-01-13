@@ -57,7 +57,7 @@
     </style>
 
     <body class="login-background">
-        <nav class="navbar navbar-inverse" style="z-index:10000;border-radius:0px;margin-bottom:0px;" role="navigation">
+        <nav class="navbar navbar-inverse" style="z-index:10000;" style="border-radius:0px;" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -65,7 +65,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="/">
                         <span class="glyphicon glyphicon-equalizer large-icon" aria-hidden="true">
                             <span>Dpostino.com</span>
                         </span>
@@ -74,35 +74,35 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
-                            <a href="#">
+                        <li>
+                            <a href="/">
                                 <span class="glyphicon glyphicon-home"></span>
                                 <br/>Home</a>
                         </li>
 
                         <li>
-                            <a href="#">
+                            <a href="/notification">
                                 <span class="glyphicon glyphicon-bell"></span>
                                 <span class="badge badge-error">5</span>
                                 <br/>Notification</a>
                         </li>
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <li  class="active">
+                            <a href="/profile">
                                 <span class="glyphicon glyphicon-user"></span>
                                 <br/>Me
-                                <span class="caret"></span>
+                                <!-- <span class="caret"></span> -->
                             </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="#">Notification</a>
-                                </li>
-                                <li>
-                                    <a href="#">About</a>
-                                </li>
-                                <li>
-                                    <a href="#">Profile</a>
-                                </li>
-                            </ul>
+                            <!-- <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">Notification</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">About</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Profile</a>
+                                        </li>
+                                    </ul> -->
                         </li>
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -173,7 +173,7 @@
                     <!-- <textarea placeholder="Share your trip or create a request" style="border-top:none;border-left:none;border-right:none;box-shadow:none;border-bottom-color:#ccc; " -->
                     <!-- class="form-control" rows="3" id="comment"></textarea> -->
                     <div class="form-group" style="padding:8px 0px;height:auto;margin-bottom:10px;">
-                        <label class="control control--checkbox"  style="font-weight:normal;">Compose Trip
+                        <label class="control control--checkbox" style="font-weight:normal;">Compose Trip
                             <input type="checkbox" name="optradio" value="Compose Trip" />
                             <div class="control__indicator"></div>
                         </label>
@@ -475,9 +475,9 @@
                                 </div>
                                 <div class="pull-right" style="margin-left:10px;">0</div>
                             </div>'>
-                       <div id="popover_content_wrapper">
-                       
-                    </div>
+                            <div id="popover_content_wrapper">
+
+                            </div>
                             <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
                                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                             </button>
@@ -833,20 +833,22 @@
 
             </div>
         </div>
-
+        <footer class="page-footer navbar navbar-default"></footer>
         <script src="js/jquery-3.2.1.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/bootstrap-datepicker.js"></script>
         <script src="js/bootstrap3-typeahead.js"></script>
         <script src="js/script.js"></script>
         <script>
-           $(function(){
-            $('[rel=popover]').popover();
-          });
+            $(function () {
+                $('[rel=popover]').popover();
+            });
             $(document).ready(function () {
-
+                $(".nav li").on("click", function () {
+                    $(".nav li").removeClass("active");
+                    $(this).addClass("active");
+                });
                 $(".btn-pref .btn").click(function () {
-
                     $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
                     // $(".tab").addClass("active"); // instead of this do the below 
                     $(this).removeClass("btn-default").addClass("btn-primary");

@@ -121,7 +121,6 @@ $(document).ready(function () {
 });
 
 $(function () {
-    $("[rel='popover']").popover();
     $('#journey-type').change(function () {
         var journeytype = $(this).val();
         $("div.journey-show").hide();
@@ -145,10 +144,6 @@ $(function () {
         }
     }).click(function (e) {
         e.preventDefault();
-    });
-    $(".nav li").on("click", function() {
-      $(".nav li").removeClass("active");
-      $(this).addClass("active");
     });
 
     $('#journey-type1').change(function () {
@@ -181,9 +176,25 @@ $(function () {
             $comment.find('button[type="submit"]').removeClass('disabled');
         }
     });
+    $(".nav li").on("click", function() {
+        $(".nav li").removeClass("active");
+        $(this).addClass("active");
+      });
     $("button.comment-sections").click(function () {
         var comid = $(this).attr('id').split('-');
         $("div#show-section-" + comid[2]).toggle();
+    })
+    $('.modal').on('show.bs.modal', function () {
+        if ($(document).height() > $(window).height()) {
+            // no-scroll
+            $('body').addClass("modal-open-noscroll");
+        }
+        else {
+            $('body').removeClass("modal-open-noscroll");
+        }
+    })
+    $('.modal').on('hide.bs.modal', function () {
+        $('body').removeClass("modal-open-noscroll");
     })
     $("input[name='optradio1']").change(function () {
         

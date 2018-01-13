@@ -170,6 +170,13 @@
     box-shadow:none !important;
     background:transparent !important;
 }
+body.modal-open-noscroll {
+    margin-right: 0!important;
+    overflow: hidden;
+  }
+  .modal-open-noscroll .navbar-fixed-top, .modal-open .navbar-fixed-bottom {
+    margin-right: 0!important;
+  }
 .control--radio input:disabled~.control__indicator:after {
     background: #7b7b7b;
 }
@@ -208,6 +215,12 @@
     color: #fff;
     background-color: #024d6f;
     border-color: #016d9e;
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #024d6f;
+    color: #fff;
 }
  .btn-warning:focus {
     color: #fff;

@@ -18,4 +18,7 @@ app.get('/addbank', function (req, res) {
 app.get('/wallet', function (req, res) {
     res.sendFile(__dirname + '/public/wallet.html');
 });
+app.get('/userevents', function (req, res) {
+    res.sendFile(__dirname + '/public/total-events.html');
+});
 app.listen(process.env.PORT||7000);

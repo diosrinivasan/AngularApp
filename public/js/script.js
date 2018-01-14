@@ -180,6 +180,43 @@ $(function () {
         $(".nav li").removeClass("active");
         $(this).addClass("active");
       });
+      $(window).scroll(function(e){ 
+        var $el = $('.nav-stacked'); 
+        var isPositionFixed = ($el.css('position') == 'fixed');
+        if ($(this).scrollTop() > 25 && !isPositionFixed){ 
+          $('.nav-stacked').css({'position': 'fixed', 'top': '0px'}); 
+        }
+        if ($(this).scrollTop() < 25 && isPositionFixed)
+        {
+          $('.nav-stacked').css({'position': 'static', 'top': '0px'}); 
+        } 
+      });
+      $(".nav-stacked li a").on('click', function(event) {
+        
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+              // Prevent default anchor click behavior
+              event.preventDefault();
+        
+              // Store hash
+              var hash = this.hash;
+        
+              // Using jQuery's animate() method to add smooth page scroll
+              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 800, function(){
+           
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              });
+            } // End if
+          });
+      $("ul.dropdown-menu li").click(function(){
+      
+          $(this).addClass('active');
+          $("ul.dropdown-menu li").removeClass('active');
+      })
     $("button.comment-sections").click(function () {
         var comid = $(this).attr('id').split('-');
         $("div#show-section-" + comid[2]).toggle();

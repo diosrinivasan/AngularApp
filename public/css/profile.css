@@ -163,10 +163,39 @@
     background:transparent !important;
     padding:0px !important;
 }
+ul.nav-stacked{
+    margin-top:15px;
+  
+    top:0;
+    width:100%;
+    z-index:100;
+   
+}
+ul.nav-stacked > li > a{
+    background:#fff !important;
+    width:50px;
+    border:1px solid rgb(199, 199, 199);
+}
+ul.nav-stacked > li > a:hover{
+    background:rgb(245, 245, 245) !important;
+    width:50px;
+}
+ul.nav-stacked > li > a:active{
+    background:rgb(245, 245, 245) !important;
+    width:50px;
+}
+ul.nav-stacked > li > a:focus{
+    background:rgb(245, 245, 245) !important;
+    width:50px;
+}
+ul.nav-stacked > li > a:visited{
+    background:rgb(245, 245, 245) !important;
+    width:50px;
+}
 .well {
     min-height: 20px;
     padding: 11px 0;
-    margin-bottom: 20px;
+    margin-bottom: 3px;
     box-shadow:none !important;
     background:transparent !important;
 }
@@ -177,6 +206,7 @@ body.modal-open-noscroll {
   .modal-open-noscroll .navbar-fixed-top, .modal-open .navbar-fixed-bottom {
     margin-right: 0!important;
   }
+
 .control--radio input:disabled~.control__indicator:after {
     background: #7b7b7b;
 }

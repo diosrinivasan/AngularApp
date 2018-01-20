@@ -130,8 +130,14 @@ $(function () {
     })
     $("a.bid-box").click(function(){
         var idattr=$(this).attr('id').split('-')[2];
-        $("div.comment-color-box").hide();
+ 
+             if(!$("div#comment-color-box-"+idattr).is(':visible'))
+        {
         $("div#comment-color-box-"+idattr).show();
+        }
+        else{
+            $("div#comment-color-box-"+idattr).hide();
+        }
       
     })
  

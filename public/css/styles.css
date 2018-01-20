@@ -41,8 +41,9 @@
   background: #ececec;
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
-  margin: 0px;
+  margin: 0px 0px 6px 0px !important;
   padding: 0px;
+  
   
 }
 .comment-publish-box{
@@ -226,7 +227,7 @@ border-color: #003750 !important;
 .dropdown-menu {
 position: absolute;
 top: 100%;
-left: 0;
+right: 0;
 z-index: 1000;
 display: none;
 float: left;

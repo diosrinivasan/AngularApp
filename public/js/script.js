@@ -140,7 +140,25 @@ $(function () {
         }
       
     })
- 
+ $("a.btn-submit-function").click(function(){
+     let fun=$(this);
+     let parent=fun.parent();
+     let parents=parent.parent();
+     let mode=parent.prev().find("select").val();
+     let max=parent.prev().prev().find("input.max").val();
+     let min=parent.prev().prev().find("input.min").val();
+     parents.append(`<div class="col-xs-12 comment-publish-box">
+     <div class="col-md-1 col-xs-3">
+         <img class="img-circle img-responsive" style="margin:0 auto;width:45px;text-align:center;" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg">
+     </div>
+     <div class="col-md-9 col-xs-9">
+         <label>Srinivasan:</label>
+         <p>
+             <b>Bid Amount: </b>${min} - ${max}
+             <b>Mode: </b>${mode}</p>
+     </div>
+ </div>`);
+ })
     $('[rel="popover"]').popover({
         container: 'body',
         html: true,

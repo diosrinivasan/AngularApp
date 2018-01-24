@@ -41,6 +41,27 @@ function readURL1(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+function readURL2(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            var filename = input.files[0]["name"];
+            var ext = filename.split('.').pop().toLowerCase();
+            if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
+                alert('invalid extension!');
+                return false;
+            }
+            $('#blah2').show();
+            $('#blah2')
+                .attr('src', e.target.result)
+                .width(50)
+                .height(50);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 $(document).ready(function () {
     $('#datepickerSource,#sourcedetails,#destdetails').datepicker({
         autoclose: true,

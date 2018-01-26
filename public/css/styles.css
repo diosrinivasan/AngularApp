@@ -46,8 +46,21 @@
   
   
 }
+.scroll4::-webkit-scrollbar {
+  width: 10px;
+}
+ 
+.scroll4::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 20px;
+}
+
+.scroll4::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 20px;
+}
 .comment-publish-box{
-  padding:10px 0px;margin:0px; background:#dedcdc;    border-bottom: 1px solid #cec7c7;
+  padding:10px 0px;margin:0px; background:#f3f1f1;    border-bottom: 1px solid #cec7c7;
 }
   .link:hover {
     color: #2ecc71;
@@ -224,7 +237,9 @@ border-color: #003750 !important;
   border-width: 8px 5px 0 5px;
   border-color: #7b7b7b transparent transparent transparent;
 }
-
+.modal-header{
+  background: #024d6f;
+}
 /* Box colors */
 .bg-1 {
 	background: #ECEFF1;

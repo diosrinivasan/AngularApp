@@ -118,9 +118,7 @@
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Secondary Mobile No" name="mobileno" id="mobileno" required>
                                     </div>
-                                    <div class="form-group">
-                                            <input type="password" placeholder="Retype Password" class="form-control" id="repsw" required>
-                                        </div>
+                                
                                 </div>
                                 <div class="col-md-6" style="padding-right:15px;padding-bottom:10px;">
                                 <input type="file" name="uploadfile" multiple onchange="readURL2(this);" class="form-control"/>
@@ -350,9 +348,10 @@
                             <div class="col-md-12">
                                 <label>Trip Name</label>
                                 <select class="form-control" id="journey-type">
-                                    <option value="--Select--">--Select--</option>
-                                    <option value="National">National</option>
-                                    <option value="International">International</option>
+                                    <option value="--Select--">-- Compose Trip --</option>
+                                    <option value="TRIP1 BNG -> DEL">TRIP1 BNG -> DEL</option>
+                                    <option value="Train">TRIP2 DEL -> BNG</option>
+                                    <option value="Bus">TRIP3 BNG -> DEL</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
@@ -437,9 +436,9 @@
                             <div class="col-md-12">
                                 <label>Request Name</label>
                                 <select class="form-control" id="journey-type">
-                                    <option value="--Select--">--Select--</option>
-                                    <option value="National">National</option>
-                                    <option value="International">International</option>
+                                    <option value="TRIP1 BNG -> DEL">Request1 MAA -> DEL</option>
+                                    <option value="Train">Request2 DEL -> MAA</option>
+                                    <option value="Bus">Request3 DEL -> MAA</option>
                                 </select>
                             </div>
                             <div class="col-md-6">

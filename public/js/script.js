@@ -75,6 +75,9 @@ $(document).ready(function () {
         event.preventDefault();
         $('#sourcedetails').focus();
     })
+    $("a.view-notification").click(function () {
+        $("#viewnotificationModal").modal('show');
+    });
     $('#sourcedetails').datepicker({
         autoclose: true,
         todayHighlight: true
@@ -149,26 +152,26 @@ $(function () {
             $("div.journey-show").show();
         }
     })
-    $("a.bid-box").click(function(){
-        var idattr=$(this).attr('id').split('-')[2];
- 
-             if(!$("div#comment-color-box-"+idattr).is(':visible'))
-        {
-        $("div#comment-color-box-"+idattr).show();
+    $("a.bid-box").click(function () {
+        var idattr = $(this).attr('id').split('-')[2];
+
+        if (!$("div#comment-color-box-" + idattr).is(':visible')) {
+            $("div#comment-color-box-" + idattr).show();
         }
-        else{
-            $("div#comment-color-box-"+idattr).hide();
+        else {
+            $("div#comment-color-box-" + idattr).hide();
         }
-      
+
     })
- $("a.btn-submit-function").click(function(){
-     let fun=$(this);
-     let parent=fun.parent();
-     let parents=parent.parent();
-     let mode=parent.prev().find("select").val();
-     let max=parent.prev().prev().find("input.max").val();
-     let min=parent.prev().prev().find("input.min").val();
-     parents.append(`<div class="col-xs-12 comment-publish-box">
+    $("a.btn-submit-function-1").click(function () {
+        let fun = $(this);
+        let parent = fun.parent();
+        let parents = parent.parent().parent().next();
+        let mode = parent.prev().prev().find("select").val();
+        let tripmode = parent.prev().find("select").val();
+        let max = parent.prev().prev().prev().find("input.max").val();
+        let min = parent.prev().prev().prev().find("input.min").val();
+        parents.append(`<div class="col-xs-12 comment-publish-box">
      <div class="col-md-1 col-xs-3">
          <img class="img-circle img-responsive" style="margin:0 auto;width:45px;text-align:center;" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg">
      </div>
@@ -176,10 +179,30 @@ $(function () {
          <label>Srinivasan:</label>
          <p>
              <b>Bid Amount: </b>${min} - ${max}
-             <b>Mode: </b>${mode}</p>
+             <b>Mode: </b>${mode} <br/><b>Trip: </b>${tripmode}</p>
      </div>
  </div>`);
- })
+    })
+    $("a.btn-submit-function").click(function () {
+        let fun = $(this);
+        let parent = fun.parent();
+        let parents = parent.parent();
+        let mode = parent.prev().prev().find("select").val();
+        let tripmode = parent.prev().find("select").val();
+        let max = parent.prev().prev().prev().find("input.max").val();
+        let min = parent.prev().prev().prev().find("input.min").val();
+        parents.append(`<div class="col-xs-12 comment-publish-box">
+     <div class="col-md-1 col-xs-3">
+         <img class="img-circle img-responsive" style="margin:0 auto;width:45px;text-align:center;" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg">
+     </div>
+     <div class="col-md-9 col-xs-9">
+         <label>Srinivasan:</label>
+         <p>
+             <b>Bid Amount: </b>${min} - ${max}
+             <b>Mode: </b>${mode} <br/> <b>Trip: </b>${tripmode}</p>
+     </div>
+ </div>`);
+    })
     $('[rel="popover"]').popover({
         container: 'body',
         html: true,
@@ -221,47 +244,46 @@ $(function () {
             $comment.find('button[type="submit"]').removeClass('disabled');
         }
     });
-    $(".nav li").on("click", function() {
+    $(".nav li").on("click", function () {
         $(".nav li").removeClass("active");
         $(this).addClass("active");
-      });
-      $(window).scroll(function(e){ 
-        var $el = $('.nav-stacked'); 
+    });
+    $(window).scroll(function (e) {
+        var $el = $('.nav-stacked');
         var isPositionFixed = ($el.css('position') == 'fixed');
-        if ($(this).scrollTop() > 25 && !isPositionFixed){ 
-          $('.nav-stacked').css({'position': 'fixed', 'top': '0px'}); 
+        if ($(this).scrollTop() > 25 && !isPositionFixed) {
+            $('.nav-stacked').css({ 'position': 'fixed', 'top': '0px' });
         }
-        if ($(this).scrollTop() < 25 && isPositionFixed)
-        {
-          $('.nav-stacked').css({'position': 'static', 'top': '0px'}); 
-        } 
-      });
-      $(".nav-stacked li a").on('click', function(event) {
-        
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-              // Prevent default anchor click behavior
-              event.preventDefault();
-        
-              // Store hash
-              var hash = this.hash;
-        
-              // Using jQuery's animate() method to add smooth page scroll
-              // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-              $('html, body').animate({
+        if ($(this).scrollTop() < 25 && isPositionFixed) {
+            $('.nav-stacked').css({ 'position': 'static', 'top': '0px' });
+        }
+    });
+    $(".nav-stacked li a").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
                 scrollTop: $(hash).offset().top
-              }, 800, function(){
-           
+            }, 800, function () {
+
                 // Add hash (#) to URL when done scrolling (default click behavior)
                 window.location.hash = hash;
-              });
-            } // End if
-          });
-      $("ul.dropdown-menu li").click(function(){
-      
-          $(this).addClass('active');
-          $("ul.dropdown-menu li").removeClass('active');
-      })
+            });
+        } // End if
+    });
+    $("ul.dropdown-menu li").click(function () {
+
+        $(this).addClass('active');
+        $("ul.dropdown-menu li").removeClass('active');
+    })
     $("button.comment-sections").click(function () {
         var comid = $(this).attr('id').split('-');
         $("div#show-section-" + comid[2]).toggle();
@@ -279,48 +301,48 @@ $(function () {
         $('body').removeClass("modal-open-noscroll");
     })
     $("input[name='optradio1']").change(function () {
-        
-                let type = $(this).val();
+
+        let type = $(this).val();
+        $(".ifc-code").hide();
+        if (type == "Yes") {
+            if ($(this).prop('checked')) {
+                $("input[name='optradio1']").prop('checked', false);
+                $(this).prop('checked', true);
+                $(".ifc-code").show();
+            }
+        }
+        else if (type == "No") {
+            if ($(this).prop('checked')) {
+                $("input[name='optradio1']").prop('checked', false);
+                $(this).prop('checked', true);
                 $(".ifc-code").hide();
-                if (type == "Yes") {
-                    if($(this).prop('checked')){
-                    $("input[name='optradio1']").prop('checked', false);
-                    $(this).prop('checked', true);
-                    $(".ifc-code").show();
-                    }
-                }
-                else if (type == "No") {
-                    if($(this).prop('checked')){
-                        $("input[name='optradio1']").prop('checked', false);
-                        $(this).prop('checked', true);
-                        $(".ifc-code").hide();
-                    }
-                  
-                }
-                else {
-        
-        
-                }
-            })
+            }
+
+        }
+        else {
+
+
+        }
+    })
     $("input[name='optradio']").change(function () {
 
         let type = $(this).val();
         $(".compose-trip").hide();
         $(".initiate-request").hide();
         if (type == "Compose Trip") {
-            if($(this).prop('checked')){
-            $("input[name='optradio']").prop('checked', false);
-            $(this).prop('checked', true);
-            $(".compose-trip").show();
+            if ($(this).prop('checked')) {
+                $("input[name='optradio']").prop('checked', false);
+                $(this).prop('checked', true);
+                $(".compose-trip").show();
             }
         }
         else if (type == "Initiate Request") {
-            if($(this).prop('checked')){
+            if ($(this).prop('checked')) {
                 $("input[name='optradio']").prop('checked', false);
                 $(this).prop('checked', true);
                 $(".initiate-request").show();
             }
-          
+
         }
         else {
 

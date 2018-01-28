@@ -163,6 +163,11 @@ $(function () {
         }
 
     })
+
+
+
+
+    
     $("a.btn-submit-function-1").click(function () {
         let fun = $(this);
         let parent = fun.parent();
@@ -172,15 +177,23 @@ $(function () {
         let max = parent.prev().prev().prev().find("input.max").val();
         let min = parent.prev().prev().prev().find("input.min").val();
         parents.append(`<div class="col-xs-12 comment-publish-box">
+ 
+        <div class="row" style="margin:0px;">
+      
      <div class="col-md-1 col-xs-3">
          <img class="img-circle img-responsive" style="margin:0 auto;width:45px;text-align:center;" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg">
      </div>
-     <div class="col-md-9 col-xs-9">
+     <div class="col-md-11 col-xs-9">
+     <a class="dropdown-toggle pull-right" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></a>
+     <ul  class="dropdown-menu pull-right" style="clear:both;top:23%">
+     <li><a href="#">Edit</a></li>
+     <li><a href="#">Delete</a></li>
+   </ul>
          <label>Srinivasan:</label>
          <p>
              <b>Bid Amount: </b>${min} - ${max}
-             <b>Mode: </b>${mode} <br/><b>Trip: </b>${tripmode}</p>
-     </div>
+             <b>Mode: </b>${mode} <b>Trip: </b>${tripmode}</p>
+     </div></div>   
  </div>`);
     })
     $("a.btn-submit-function").click(function () {
@@ -195,11 +208,16 @@ $(function () {
      <div class="col-md-1 col-xs-3">
          <img class="img-circle img-responsive" style="margin:0 auto;width:45px;text-align:center;" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg">
      </div>
-     <div class="col-md-9 col-xs-9">
+     <div class="col-md-11 col-xs-9">
+     <a class="dropdown-toggle pull-right" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></a>
+     <ul class="dropdown-menu pull-right" style="clear:both;top:23%">
+     <li><a href="#">Edit</a></li>
+     <li><a href="#">Delete</a></li>
+   </ul>
          <label>Srinivasan:</label>
          <p>
              <b>Bid Amount: </b>${min} - ${max}
-             <b>Mode: </b>${mode} <br/> <b>Trip: </b>${tripmode}</p>
+             <b>Mode: </b>${mode} <b>Trip: </b>${tripmode}</p>
      </div>
  </div>`);
     })

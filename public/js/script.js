@@ -152,6 +152,22 @@ $(function () {
             $("div.journey-show").show();
         }
     })
+    $("select.compose-trip-type").click(function () {
+        let traveller = $(this).val();
+        if (traveller == "Compose Trip") {
+      //  $("input[name='optradio'][value='"+traveller+"']").prop('checked',true)
+        $("input[name='optradio'][value='"+traveller+"']").click();
+        $("#viewnotificationModal").modal('hide');
+        }
+    });
+    $("select.initiate-request-type").click(function () {
+        let traveller = $(this).val();
+        if (traveller == "Initiate Request") {
+        //$("input[name='optradio'][value='"+traveller+"']").prop('checked',true)
+        $("input[name='optradio'][value='"+traveller+"']").click();
+        $("#viewnotificationModal").modal('hide');
+        }
+    });
     $("a.bid-box").click(function () {
         var idattr = $(this).attr('id').split('-')[2];
 
@@ -167,7 +183,7 @@ $(function () {
 
 
 
-    
+
     $("a.btn-submit-function-1").click(function () {
         let fun = $(this);
         let parent = fun.parent();
